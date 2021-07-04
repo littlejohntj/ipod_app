@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07CF1895268FC8E800C43932 /* iPodTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */; };
+		07CF1897268FC8E800C43932 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF1896268FC8E800C43932 /* ContentView.swift */; };
+		07CF1899268FC8E900C43932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF1898268FC8E900C43932 /* Assets.xcassets */; };
+		07CF189C268FC8E900C43932 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF189B268FC8E900C43932 /* Preview Assets.xcassets */; };
+		07CF18A6268FC8E900C43932 /* iPodTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18A5268FC8E900C43932 /* iPodTestAppTests.swift */; };
+		07CF18B0268FC8E900C43932 /* iPodTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18AF268FC8E900C43932 /* iPodTestAppUITests.swift */; };
+		07CF18C0268FD45400C43932 /* TopMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18BF268FD45400C43932 /* TopMenuBar.swift */; };
+		07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */; };
+		07E3A0382691E52D0081C737 /* SpinnableViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */; };
+		07E3A03A2691E5590081C737 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0392691E5590081C737 /* Rotation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07CF18A2268FC8E900C43932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07CF1889268FC8E800C43932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07CF1890268FC8E800C43932;
+			remoteInfo = iPodTestApp;
+		};
+		07CF18AC268FC8E900C43932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07CF1889268FC8E800C43932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07CF1890268FC8E800C43932;
+			remoteInfo = iPodTestApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07CF1891268FC8E800C43932 /* iPodTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPodTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodTestAppApp.swift; sourceTree = "<group>"; };
+		07CF1896268FC8E800C43932 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		07CF1898268FC8E900C43932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07CF189B268FC8E900C43932 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		07CF18A1268FC8E900C43932 /* iPodTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPodTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CF18A5268FC8E900C43932 /* iPodTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodTestAppTests.swift; sourceTree = "<group>"; };
+		07CF18AB268FC8E900C43932 /* iPodTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPodTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CF18AF268FC8E900C43932 /* iPodTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodTestAppUITests.swift; sourceTree = "<group>"; };
+		07CF18BF268FD45400C43932 /* TopMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuBar.swift; sourceTree = "<group>"; };
+		07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Conversion.swift"; sourceTree = "<group>"; };
+		07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnableViewModifier.swift; sourceTree = "<group>"; };
+		07E3A0392691E5590081C737 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
+		07E3A03B2692015D0081C737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07CF188E268FC8E800C43932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CF189E268FC8E900C43932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CF18A8268FC8E900C43932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07CF1888268FC8E800C43932 = {
+			isa = PBXGroup;
+			children = (
+				07CF1893268FC8E800C43932 /* iPodTestApp */,
+				07CF18A4268FC8E900C43932 /* iPodTestAppTests */,
+				07CF18AE268FC8E900C43932 /* iPodTestAppUITests */,
+				07CF1892268FC8E800C43932 /* Products */,
+				07CF18BC268FC93700C43932 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		07CF1892268FC8E800C43932 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07CF1891268FC8E800C43932 /* iPodTestApp.app */,
+				07CF18A1268FC8E900C43932 /* iPodTestAppTests.xctest */,
+				07CF18AB268FC8E900C43932 /* iPodTestAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07CF1893268FC8E800C43932 /* iPodTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				07E3A03B2692015D0081C737 /* Info.plist */,
+				07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */,
+				07CF1896268FC8E800C43932 /* ContentView.swift */,
+				07CF18BF268FD45400C43932 /* TopMenuBar.swift */,
+				07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */,
+				07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */,
+				07E3A0392691E5590081C737 /* Rotation.swift */,
+				07CF1898268FC8E900C43932 /* Assets.xcassets */,
+				07CF189A268FC8E900C43932 /* Preview Content */,
+			);
+			path = iPodTestApp;
+			sourceTree = "<group>";
+		};
+		07CF189A268FC8E900C43932 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				07CF189B268FC8E900C43932 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		07CF18A4268FC8E900C43932 /* iPodTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				07CF18A5268FC8E900C43932 /* iPodTestAppTests.swift */,
+			);
+			path = iPodTestAppTests;
+			sourceTree = "<group>";
+		};
+		07CF18AE268FC8E900C43932 /* iPodTestAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				07CF18AF268FC8E900C43932 /* iPodTestAppUITests.swift */,
+			);
+			path = iPodTestAppUITests;
+			sourceTree = "<group>";
+		};
+		07CF18BC268FC93700C43932 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07CF1890268FC8E800C43932 /* iPodTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07CF18B3268FC8E900C43932 /* Build configuration list for PBXNativeTarget "iPodTestApp" */;
+			buildPhases = (
+				07CF188D268FC8E800C43932 /* Sources */,
+				07CF188E268FC8E800C43932 /* Frameworks */,
+				07CF188F268FC8E800C43932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPodTestApp;
+			packageProductDependencies = (
+			);
+			productName = iPodTestApp;
+			productReference = 07CF1891268FC8E800C43932 /* iPodTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07CF18A0268FC8E900C43932 /* iPodTestAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07CF18B6268FC8E900C43932 /* Build configuration list for PBXNativeTarget "iPodTestAppTests" */;
+			buildPhases = (
+				07CF189D268FC8E900C43932 /* Sources */,
+				07CF189E268FC8E900C43932 /* Frameworks */,
+				07CF189F268FC8E900C43932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07CF18A3268FC8E900C43932 /* PBXTargetDependency */,
+			);
+			name = iPodTestAppTests;
+			productName = iPodTestAppTests;
+			productReference = 07CF18A1268FC8E900C43932 /* iPodTestAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		07CF18AA268FC8E900C43932 /* iPodTestAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07CF18B9268FC8E900C43932 /* Build configuration list for PBXNativeTarget "iPodTestAppUITests" */;
+			buildPhases = (
+				07CF18A7268FC8E900C43932 /* Sources */,
+				07CF18A8268FC8E900C43932 /* Frameworks */,
+				07CF18A9268FC8E900C43932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07CF18AD268FC8E900C43932 /* PBXTargetDependency */,
+			);
+			name = iPodTestAppUITests;
+			productName = iPodTestAppUITests;
+			productReference = 07CF18AB268FC8E900C43932 /* iPodTestAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07CF1889268FC8E800C43932 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					07CF1890268FC8E800C43932 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					07CF18A0268FC8E900C43932 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 07CF1890268FC8E800C43932;
+					};
+					07CF18AA268FC8E900C43932 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 07CF1890268FC8E800C43932;
+					};
+				};
+			};
+			buildConfigurationList = 07CF188C268FC8E800C43932 /* Build configuration list for PBXProject "iPodTestApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 07CF1888268FC8E800C43932;
+			productRefGroup = 07CF1892268FC8E800C43932 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07CF1890268FC8E800C43932 /* iPodTestApp */,
+				07CF18A0268FC8E900C43932 /* iPodTestAppTests */,
+				07CF18AA268FC8E900C43932 /* iPodTestAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07CF188F268FC8E800C43932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CF189C268FC8E900C43932 /* Preview Assets.xcassets in Resources */,
+				07CF1899268FC8E900C43932 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CF189F268FC8E900C43932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CF18A9268FC8E900C43932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07CF188D268FC8E800C43932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */,
+				07CF18C0268FD45400C43932 /* TopMenuBar.swift in Sources */,
+				07CF1897268FC8E800C43932 /* ContentView.swift in Sources */,
+				07CF1895268FC8E800C43932 /* iPodTestAppApp.swift in Sources */,
+				07E3A0382691E52D0081C737 /* SpinnableViewModifier.swift in Sources */,
+				07E3A03A2691E5590081C737 /* Rotation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CF189D268FC8E900C43932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CF18A6268FC8E900C43932 /* iPodTestAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CF18A7268FC8E900C43932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CF18B0268FC8E900C43932 /* iPodTestAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07CF18A3268FC8E900C43932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07CF1890268FC8E800C43932 /* iPodTestApp */;
+			targetProxy = 07CF18A2268FC8E900C43932 /* PBXContainerItemProxy */;
+		};
+		07CF18AD268FC8E900C43932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07CF1890268FC8E800C43932 /* iPodTestApp */;
+			targetProxy = 07CF18AC268FC8E900C43932 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		07CF18B1268FC8E900C43932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		07CF18B2268FC8E900C43932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07CF18B4268FC8E900C43932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iPodTestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = KW8RLKUW3C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iPodTestApp/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = iPodTestApp;
+				INFOPLIST_KEY_CFBundleName = iPodTestApp;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07CF18B5268FC8E900C43932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iPodTestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = KW8RLKUW3C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iPodTestApp/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = iPodTestApp;
+				INFOPLIST_KEY_CFBundleName = iPodTestApp;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		07CF18B7268FC8E900C43932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KW8RLKUW3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPodTestApp.app/iPodTestApp";
+			};
+			name = Debug;
+		};
+		07CF18B8268FC8E900C43932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KW8RLKUW3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPodTestApp.app/iPodTestApp";
+			};
+			name = Release;
+		};
+		07CF18BA268FC8E900C43932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KW8RLKUW3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iPodTestApp;
+			};
+			name = Debug;
+		};
+		07CF18BB268FC8E900C43932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KW8RLKUW3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iPodTestApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07CF188C268FC8E800C43932 /* Build configuration list for PBXProject "iPodTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CF18B1268FC8E900C43932 /* Debug */,
+				07CF18B2268FC8E900C43932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07CF18B3268FC8E900C43932 /* Build configuration list for PBXNativeTarget "iPodTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CF18B4268FC8E900C43932 /* Debug */,
+				07CF18B5268FC8E900C43932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07CF18B6268FC8E900C43932 /* Build configuration list for PBXNativeTarget "iPodTestAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CF18B7268FC8E900C43932 /* Debug */,
+				07CF18B8268FC8E900C43932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07CF18B9268FC8E900C43932 /* Build configuration list for PBXNativeTarget "iPodTestAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CF18BA268FC8E900C43932 /* Debug */,
+				07CF18BB268FC8E900C43932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07CF1889268FC8E800C43932 /* Project object */;
+}
