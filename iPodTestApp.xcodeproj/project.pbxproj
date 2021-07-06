@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0746D4B52693E0E800B77F9E /* Chicago-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0746D4B42693E0E800B77F9E /* Chicago-Regular.ttf */; };
+		0746D4B72693E17B00B77F9E /* SellMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746D4B62693E17B00B77F9E /* SellMeView.swift */; };
 		07CF1895268FC8E800C43932 /* iPodTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */; };
 		07CF1897268FC8E800C43932 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF1896268FC8E800C43932 /* ContentView.swift */; };
 		07CF1899268FC8E900C43932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF1898268FC8E900C43932 /* Assets.xcassets */; };
@@ -17,6 +19,18 @@
 		07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */; };
 		07E3A0382691E52D0081C737 /* SpinnableViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */; };
 		07E3A03A2691E5590081C737 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0392691E5590081C737 /* Rotation.swift */; };
+		07E3A03D269373FB0081C737 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A03C269373FB0081C737 /* Screen.swift */; };
+		07E3A040269393D30081C737 /* MusicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E3A03F269393D30081C737 /* MusicKit.framework */; };
+		07E3A042269395510081C737 /* MyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A041269395510081C737 /* MyState.swift */; };
+		07E3A044269395970081C737 /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A043269395970081C737 /* ControlButton.swift */; };
+		07E3A046269397C80081C737 /* ControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A045269397C80081C737 /* ControlBar.swift */; };
+		07E3A048269398A10081C737 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A047269398A10081C737 /* MenuCell.swift */; };
+		07E3A04A269399740081C737 /* Wheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A049269399740081C737 /* Wheel.swift */; };
+		07E3A04C26939A680081C737 /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A04B26939A680081C737 /* MusicView.swift */; };
+		07E3A04E26939ACE0081C737 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A04D26939ACE0081C737 /* Ring.swift */; };
+		07E3A0502693A33A0081C737 /* NavigationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A04F2693A33A0081C737 /* NavigationTestView.swift */; };
+		07E3A0542693D34E0081C737 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 07E3A0532693D34E0081C737 /* Neumorphic */; };
+		07E3A0562693D5B20081C737 /* NeoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0552693D5B20081C737 /* NeoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0746D4B42693E0E800B77F9E /* Chicago-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chicago-Regular.ttf"; sourceTree = "<group>"; };
+		0746D4B62693E17B00B77F9E /* SellMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellMeView.swift; sourceTree = "<group>"; };
 		07CF1891268FC8E800C43932 /* iPodTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPodTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodTestAppApp.swift; sourceTree = "<group>"; };
 		07CF1896268FC8E800C43932 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +67,18 @@
 		07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnableViewModifier.swift; sourceTree = "<group>"; };
 		07E3A0392691E5590081C737 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
 		07E3A03B2692015D0081C737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		07E3A03C269373FB0081C737 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		07E3A03E269392E00081C737 /* iPodTestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iPodTestApp.entitlements; sourceTree = "<group>"; };
+		07E3A03F269393D30081C737 /* MusicKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MusicKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/MusicKit.framework; sourceTree = DEVELOPER_DIR; };
+		07E3A041269395510081C737 /* MyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyState.swift; sourceTree = "<group>"; };
+		07E3A043269395970081C737 /* ControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
+		07E3A045269397C80081C737 /* ControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBar.swift; sourceTree = "<group>"; };
+		07E3A047269398A10081C737 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		07E3A049269399740081C737 /* Wheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wheel.swift; sourceTree = "<group>"; };
+		07E3A04B26939A680081C737 /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
+		07E3A04D26939ACE0081C737 /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
+		07E3A04F2693A33A0081C737 /* NavigationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTestView.swift; sourceTree = "<group>"; };
+		07E3A0552693D5B20081C737 /* NeoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E3A0542693D34E0081C737 /* Neumorphic in Frameworks */,
+				07E3A040269393D30081C737 /* MusicKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,13 +132,23 @@
 		07CF1893268FC8E800C43932 /* iPodTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				07E3A03E269392E00081C737 /* iPodTestApp.entitlements */,
 				07E3A03B2692015D0081C737 /* Info.plist */,
-				07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */,
 				07CF1896268FC8E800C43932 /* ContentView.swift */,
+				0746D4B62693E17B00B77F9E /* SellMeView.swift */,
+				07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */,
+				07E3A04F2693A33A0081C737 /* NavigationTestView.swift */,
+				07E3A04B26939A680081C737 /* MusicView.swift */,
+				07E3A043269395970081C737 /* ControlButton.swift */,
+				07E3A0552693D5B20081C737 /* NeoView.swift */,
+				07E3A049269399740081C737 /* Wheel.swift */,
+				07E3A045269397C80081C737 /* ControlBar.swift */,
+				07E3A047269398A10081C737 /* MenuCell.swift */,
+				07E3A03C269373FB0081C737 /* Screen.swift */,
 				07CF18BF268FD45400C43932 /* TopMenuBar.swift */,
-				07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */,
-				07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */,
-				07E3A0392691E5590081C737 /* Rotation.swift */,
+				07E3A041269395510081C737 /* MyState.swift */,
+				0746D4B42693E0E800B77F9E /* Chicago-Regular.ttf */,
+				07E3A0512693AE230081C737 /* Stolen Wheel Code */,
 				07CF1898268FC8E900C43932 /* Assets.xcassets */,
 				07CF189A268FC8E900C43932 /* Preview Content */,
 			);
@@ -142,8 +182,20 @@
 		07CF18BC268FC93700C43932 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07E3A03F269393D30081C737 /* MusicKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07E3A0512693AE230081C737 /* Stolen Wheel Code */ = {
+			isa = PBXGroup;
+			children = (
+				07E3A04D26939ACE0081C737 /* Ring.swift */,
+				07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */,
+				07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */,
+				07E3A0392691E5590081C737 /* Rotation.swift */,
+			);
+			path = "Stolen Wheel Code";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +215,7 @@
 			);
 			name = iPodTestApp;
 			packageProductDependencies = (
+				07E3A0532693D34E0081C737 /* Neumorphic */,
 			);
 			productName = iPodTestApp;
 			productReference = 07CF1891268FC8E800C43932 /* iPodTestApp.app */;
@@ -236,6 +289,9 @@
 				Base,
 			);
 			mainGroup = 07CF1888268FC8E800C43932;
+			packageReferences = (
+				07E3A0522693D2A80081C737 /* XCRemoteSwiftPackageReference "neumorphic" */,
+			);
 			productRefGroup = 07CF1892268FC8E800C43932 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0746D4B52693E0E800B77F9E /* Chicago-Regular.ttf in Resources */,
 				07CF189C268FC8E900C43932 /* Preview Assets.xcassets in Resources */,
 				07CF1899268FC8E900C43932 /* Assets.xcassets in Resources */,
 			);
@@ -278,12 +335,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E3A044269395970081C737 /* ControlButton.swift in Sources */,
+				07E3A03D269373FB0081C737 /* Screen.swift in Sources */,
 				07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */,
+				07E3A04A269399740081C737 /* Wheel.swift in Sources */,
 				07CF18C0268FD45400C43932 /* TopMenuBar.swift in Sources */,
+				07E3A0562693D5B20081C737 /* NeoView.swift in Sources */,
 				07CF1897268FC8E800C43932 /* ContentView.swift in Sources */,
+				07E3A048269398A10081C737 /* MenuCell.swift in Sources */,
 				07CF1895268FC8E800C43932 /* iPodTestAppApp.swift in Sources */,
 				07E3A0382691E52D0081C737 /* SpinnableViewModifier.swift in Sources */,
+				07E3A04E26939ACE0081C737 /* Ring.swift in Sources */,
+				07E3A04C26939A680081C737 /* MusicView.swift in Sources */,
+				07E3A0502693A33A0081C737 /* NavigationTestView.swift in Sources */,
+				07E3A046269397C80081C737 /* ControlBar.swift in Sources */,
 				07E3A03A2691E5590081C737 /* Rotation.swift in Sources */,
+				0746D4B72693E17B00B77F9E /* SellMeView.swift in Sources */,
+				07E3A042269395510081C737 /* MyState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iPodTestApp/iPodTestApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iPodTestApp/Preview Content\"";
@@ -463,6 +532,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iPodTestApp/iPodTestApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iPodTestApp/Preview Content\"";
@@ -497,6 +568,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -639,6 +711,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		07E3A0522693D2A80081C737 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		07E3A0532693D34E0081C737 /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07E3A0522693D2A80081C737 /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 07CF1889268FC8E800C43932 /* Project object */;
 }

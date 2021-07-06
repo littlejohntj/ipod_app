@@ -11,8 +11,7 @@ import SwiftUI
 struct iPodTestAppApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView(state: MyState())
-            MusicView()
+            ContentView(state: MyState())
         }
     }
 }

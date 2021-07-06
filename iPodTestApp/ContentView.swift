@@ -7,162 +7,81 @@
 
 import SwiftUI
 import MusicKit
-
-class MyState: ObservableObject {
-    
-    @Published var selected: Int = 0
-    var items: [RowItem] = [ RowItem(name: "Music", arrow: true),
-                             RowItem(name: "Extras", arrow: true),
-                             RowItem(name: "Settings", arrow: true),
-                             RowItem(name: "Shuffle Songs", arrow: true),
-                             RowItem(name: "Backlight", arrow: false) ]
-    
-    func up() {
-        if selected < 4 {
-            selected += 1
-        }
-    }
-    
-    func down() {
-        if selected > 0 {
-            selected -= 1
-        }
-    }
-    
-}
+import MediaPlayer
 
 struct ContentView: View {
     
     @StateObject var state: MyState
-    
-    var body: some View {
-        VStack {
-            TopMenuBar()
-            .frame(height: 20.0)
-            List {
-                ForEach(state.items.indices, id: \.self) { index in
-                    CustomeText(text: state.items[index].name, selected: state.selected == index, arrow: state.items[index].arrow)
-                }
-            }
-            Wheel(state: state)
-        }
+    var controlBarViewModel = ControlBarViewModel {
+        
     }
-}
-
-struct CustomeText: View {
-    var text: String
-    var selected: Bool
-    var arrow: Bool
     
     var body: some View {
+        
         ZStack {
-            selected ? Color.purple.ignoresSafeArea() : Color.green.ignoresSafeArea()
-            HStack {
-                Text(text).padding()
-                Spacer()
-                if arrow { Image(systemName: "chevron.right").padding() }
+            
+            VStack {
+                Screen(width: 350) {
+                    ContentList(state: state)
+                }
+                ControlBar(state: state, viewModel: controlBarViewModel, buttonSize: 80)
+                    .frame(height: 80)
+                    .padding()
+                Wheel(state: state, wheelButton: {
+                    state.select?()
+                })
+                    .padding()
+            }
+        }
+        .onAppear {
+            for family in UIFont.familyNames.sorted() {
+                let names = UIFont.fontNames(forFamilyName: family)
+                print("Family: \(family) Font names: \(names)")
             }
         }
     }
 }
 
-struct Wheel: View {
+struct ContentList: View {
     
-    var state: MyState
-    var spaceingDistance: CGFloat = 100
-    static let shift: CGFloat = 0.2
-    
-    
-    @State var prev: CGFloat = -1 * shift
-    @State var current: CGFloat = 0
-    @State var next:CGFloat = Wheel.shift
+    @Environment(\.dismiss) var dismiss
+    @StateObject var state: MyState
+    let lightBlue = Color(.displayP3, red: 186/255, green: 199/255, blue: 217/255, opacity: 1)
     
     var body: some View {
-        VStack {
-            Ring(ratio: 0.4)
-                .fill(Color.blue)
-                .spinnable(onChanged: { (rotation) in
-                    if rotation.laps > next {
-                        prev = current
-                        current = next
-                        next = next + Wheel.shift
-                        state.up()
-                    } else if rotation.laps < prev {
-                        next = current
-                        current = prev
-                        prev = prev - Wheel.shift
-                        state.down()
+            ZStack {
+                lightBlue.edgesIgnoringSafeArea(.all)
+                List {
+                    ForEach(state.items.indices, id: \.self) { index in
+                        
+                        ZStack {
+                            MenuCell(text: state.items[index].name, selected: state.selected == index, arrow: state.items[index].arrow)
+                            NavigationLink(destination: ContentList(state: state)) {
+                                EmptyView()
+                            }
+                            .frame(width: 0, height: 0)
+                            .hidden()
+                        }
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparator(.hidden)
+                        
                     }
-                    print(rotation.laps)
-                }, onEnded: { rotation in
-                    print("SUCK ME")
-                })
-        }
+                }
+                .listStyle(.plain)
+                .environment(\.defaultMinListRowHeight, 40)
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+            }.onAppear {
+                state.stateDismiss = dismiss
+            }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(state: MyState())
-//        MusicView()
-    }
-}
-
-struct RowItem: Identifiable, Hashable {
-    let id = UUID()
-    let name: String
-    let arrow: Bool
-}
-
-struct Ring: Shape {
-    
-    var ratio: CGFloat
-
-    func path(in rect: CGRect) -> Path {
-        let radius = min(rect.width, rect.height) / 2
-        let center = CGPoint(x: rect.width / 2,
-                             y: rect.height / 2)
-        var path = Path()
-        path.addArc(center: center,
-                    radius: radius,
-                    startAngle: .zero,
-                    endAngle: .init(radians: .pi * 2),
-                    clockwise: true)
-
-        path.addArc(center: center,
-                    radius: radius * ratio,
-                    startAngle: .zero,
-                    endAngle: .init(radians: .pi * 2),
-                    clockwise: false)
-
-        return path
-    }
-}
- 
-struct MusicView: View {
-    var body: some View {
-        VStack {
-            List {
-                Text("sup")
-                Text("dude")
-            }
-            Button("Auth") {
-                async {
-                    let status = await getAuth()
-                    print(status)
-                }
-            }.padding()
-            Button("Play") {
-                
-            }.padding()
-            Button("Pause") {
-                SystemMusicPlayer.shared.pause()
-            }.padding()
+        Group {
+            ContentView(state: MyState())
+                .previewDevice("Mac")
         }
-    }
-    
-    func getAuth() async -> MusicAuthorization.Status {
-        let status = await MusicAuthorization.request()
-        return status
     }
 }
