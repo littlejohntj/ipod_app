@@ -15,7 +15,8 @@ struct Wheel: View {
     var spaceingDistance: CGFloat = 100
     static let shift: CGFloat = 0.2
     
-    let num: CGFloat = 160
+    let num: CGFloat = 110
+    let size: CGFloat = 320
     
     @State var prev: CGFloat = -1 * shift
     @State var current: CGFloat = 0
@@ -23,31 +24,35 @@ struct Wheel: View {
     
     var body: some View {
         ZStack {
-            ZStack {
-                Button(action: {
-                    wheelButton()
-                }, label: {
-                    Text("")
-                        .frame(width: num * 0.75, height: num * 0.75, alignment: .center)
-                        .clipShape(Circle())
-                })
-                Ring(ratio: 0.4)
-                    .fill(Color.white)
-                    .spinnable(onChanged: { (rotation) in
-                        if rotation.laps > next {
-                            previousItem()
-                        } else if rotation.laps < prev {
-                            nextItem()
-                        }
-                    }, onEnded: { rotation in
-                        // pass I think
-                })
-            }
-            Ring(ratio: 0.985)
-                .fill(Color.gray)
-            Ring(ratio: 0.97)
-                .fill(Color.gray)
-                .frame(width: num, height: num, alignment: .center)
+            Circle().fill(Color.white).frame(width: size, height: size)
+                .softInnerShadow(Circle(), spread: 0.6)
+
+            Circle().fill(Color.white).frame(width: size - 8, height: size - 8)
+                .softOuterShadow(offset: 2, radius: 3)
+            Ring(ratio: 0.4)
+                .fill(Color.white)
+                .spinnable(onChanged: { (rotation) in
+                    if rotation.laps > next {
+                        previousItem()
+                    } else if rotation.laps < prev {
+                        nextItem()
+                    }
+                }, onEnded: { rotation in
+                    // pass I think
+            })
+                .frame(width: size - 20, height: size - 20, alignment: .center)
+            Circle().fill(Color.white).frame(width: num, height: num)
+                .softInnerShadow(Circle(), spread: 0.6)
+
+            Circle().fill(Color.white).frame(width: num - 8, height: num - 8)
+                .softOuterShadow(offset: 2, radius: 3)
+            Button(action: {
+                wheelButton()
+            }, label: {
+                Text("")
+                    .frame(width: num * 0.75, height: num * 0.75, alignment: .center)
+                    .clipShape(Circle())
+            })
         }
         
     }
@@ -70,6 +75,7 @@ struct Wheel: View {
 struct Wheel_Previews: PreviewProvider {
     static var previews: some View {
         Wheel(state: MyState(), wheelButton: {})
+//        Wheel(wheelButton: {})
             .padding()
     }
 }

@@ -14,8 +14,6 @@ struct Screen<Content>: View where Content: View {
     var container: () -> Content
     
     var body: some View {
-        let darkBlue = Color(.displayP3, red: 51/255, green: 57/255, blue: 90/255, opacity: 1)
-        let lightBlue = Color(.displayP3, red: 186/255, green: 199/255, blue: 217/255, opacity: 1)
         
         let aspectRatio: CGFloat = 111.0 / 135.0
         
@@ -36,16 +34,16 @@ struct Screen<Content>: View where Content: View {
                     .fill(Color.black)
                     .frame(width: blackWidth, height: blackHeight, alignment: .center)
                 RoundedRectangle(cornerRadius: 4)
-                    .fill(Color.white)
+                    .fill( Theme.colors.backgroundColor )
                     .frame(width: whiteWidth, height: whiteHeight, alignment: .center)
                 ZStack {
                     Rectangle()
-                        .fill(lightBlue)
+                        .fill( Theme.colors.lightColor )
                         .frame(width: blueWidth, height: blueHeight, alignment: .center)
                     VStack {
-                        TopMenuBar().frame(height: 10).padding([.top], 10)
+                        TopMenuBar().frame(height: 15).padding([.top, .trailing], 10)
                         Rectangle()
-                            .fill(darkBlue)
+                            .fill( Theme.colors.darkColor )
                             .frame(height: 2)
                         NavigationView {
                             container()

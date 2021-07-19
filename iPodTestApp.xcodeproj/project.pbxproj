@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0746D4B52693E0E800B77F9E /* Chicago-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0746D4B42693E0E800B77F9E /* Chicago-Regular.ttf */; };
 		0746D4B72693E17B00B77F9E /* SellMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746D4B62693E17B00B77F9E /* SellMeView.swift */; };
+		0746D4B92693E53600B77F9E /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746D4B82693E53600B77F9E /* Battery.swift */; };
+		07B49865269E62960076B3AA /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B49864269E62960076B3AA /* Reducer.swift */; };
+		07B4D60726A5B992002D7ADA /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4D60626A5B992002D7ADA /* Arrow.swift */; };
+		07B4D60926A5C0BD002D7ADA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4D60826A5C0BD002D7ADA /* Theme.swift */; };
+		07C103A42693F6050076C5B4 /* iPodCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C103A32693F6050076C5B4 /* iPodCase.swift */; };
 		07CF1895268FC8E800C43932 /* iPodTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */; };
 		07CF1897268FC8E800C43932 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF1896268FC8E800C43932 /* ContentView.swift */; };
 		07CF1899268FC8E900C43932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF1898268FC8E900C43932 /* Assets.xcassets */; };
@@ -16,6 +21,7 @@
 		07CF18A6268FC8E900C43932 /* iPodTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18A5268FC8E900C43932 /* iPodTestAppTests.swift */; };
 		07CF18B0268FC8E900C43932 /* iPodTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18AF268FC8E900C43932 /* iPodTestAppUITests.swift */; };
 		07CF18C0268FD45400C43932 /* TopMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18BF268FD45400C43932 /* TopMenuBar.swift */; };
+		07D6399B269406DC0073E1AD /* GlowText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6399A269406DC0073E1AD /* GlowText.swift */; };
 		07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */; };
 		07E3A0382691E52D0081C737 /* SpinnableViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */; };
 		07E3A03A2691E5590081C737 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0392691E5590081C737 /* Rotation.swift */; };
@@ -53,6 +59,11 @@
 /* Begin PBXFileReference section */
 		0746D4B42693E0E800B77F9E /* Chicago-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chicago-Regular.ttf"; sourceTree = "<group>"; };
 		0746D4B62693E17B00B77F9E /* SellMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellMeView.swift; sourceTree = "<group>"; };
+		0746D4B82693E53600B77F9E /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		07B49864269E62960076B3AA /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		07B4D60626A5B992002D7ADA /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		07B4D60826A5C0BD002D7ADA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		07C103A32693F6050076C5B4 /* iPodCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodCase.swift; sourceTree = "<group>"; };
 		07CF1891268FC8E800C43932 /* iPodTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPodTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodTestAppApp.swift; sourceTree = "<group>"; };
 		07CF1896268FC8E800C43932 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +74,7 @@
 		07CF18AB268FC8E900C43932 /* iPodTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPodTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CF18AF268FC8E900C43932 /* iPodTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodTestAppUITests.swift; sourceTree = "<group>"; };
 		07CF18BF268FD45400C43932 /* TopMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuBar.swift; sourceTree = "<group>"; };
+		07D6399A269406DC0073E1AD /* GlowText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowText.swift; sourceTree = "<group>"; };
 		07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Conversion.swift"; sourceTree = "<group>"; };
 		07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnableViewModifier.swift; sourceTree = "<group>"; };
 		07E3A0392691E5590081C737 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
@@ -79,6 +91,7 @@
 		07E3A04D26939ACE0081C737 /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		07E3A04F2693A33A0081C737 /* NavigationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTestView.swift; sourceTree = "<group>"; };
 		07E3A0552693D5B20081C737 /* NeoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoView.swift; sourceTree = "<group>"; };
+		07F99D122693EDA6007840DF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07B4D60526A5B97A002D7ADA /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				0746D4B82693E53600B77F9E /* Battery.swift */,
+				07B4D60626A5B992002D7ADA /* Arrow.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		07CF1888268FC8E800C43932 = {
 			isa = PBXGroup;
 			children = (
@@ -135,18 +157,23 @@
 				07E3A03E269392E00081C737 /* iPodTestApp.entitlements */,
 				07E3A03B2692015D0081C737 /* Info.plist */,
 				07CF1896268FC8E800C43932 /* ContentView.swift */,
+				07B49864269E62960076B3AA /* Reducer.swift */,
+				07C103A32693F6050076C5B4 /* iPodCase.swift */,
+				07D6399A269406DC0073E1AD /* GlowText.swift */,
 				0746D4B62693E17B00B77F9E /* SellMeView.swift */,
 				07CF1894268FC8E800C43932 /* iPodTestAppApp.swift */,
 				07E3A04F2693A33A0081C737 /* NavigationTestView.swift */,
 				07E3A04B26939A680081C737 /* MusicView.swift */,
 				07E3A043269395970081C737 /* ControlButton.swift */,
 				07E3A0552693D5B20081C737 /* NeoView.swift */,
+				07B4D60526A5B97A002D7ADA /* Shapes */,
 				07E3A049269399740081C737 /* Wheel.swift */,
 				07E3A045269397C80081C737 /* ControlBar.swift */,
 				07E3A047269398A10081C737 /* MenuCell.swift */,
 				07E3A03C269373FB0081C737 /* Screen.swift */,
 				07CF18BF268FD45400C43932 /* TopMenuBar.swift */,
 				07E3A041269395510081C737 /* MyState.swift */,
+				07B4D60826A5C0BD002D7ADA /* Theme.swift */,
 				0746D4B42693E0E800B77F9E /* Chicago-Regular.ttf */,
 				07E3A0512693AE230081C737 /* Stolen Wheel Code */,
 				07CF1898268FC8E900C43932 /* Assets.xcassets */,
@@ -182,6 +209,7 @@
 		07CF18BC268FC93700C43932 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07F99D122693EDA6007840DF /* MediaPlayer.framework */,
 				07E3A03F269393D30081C737 /* MusicKit.framework */,
 			);
 			name = Frameworks;
@@ -338,20 +366,26 @@
 				07E3A044269395970081C737 /* ControlButton.swift in Sources */,
 				07E3A03D269373FB0081C737 /* Screen.swift in Sources */,
 				07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */,
+				07B4D60926A5C0BD002D7ADA /* Theme.swift in Sources */,
+				07C103A42693F6050076C5B4 /* iPodCase.swift in Sources */,
 				07E3A04A269399740081C737 /* Wheel.swift in Sources */,
 				07CF18C0268FD45400C43932 /* TopMenuBar.swift in Sources */,
 				07E3A0562693D5B20081C737 /* NeoView.swift in Sources */,
 				07CF1897268FC8E800C43932 /* ContentView.swift in Sources */,
 				07E3A048269398A10081C737 /* MenuCell.swift in Sources */,
 				07CF1895268FC8E800C43932 /* iPodTestAppApp.swift in Sources */,
+				0746D4B92693E53600B77F9E /* Battery.swift in Sources */,
+				07B49865269E62960076B3AA /* Reducer.swift in Sources */,
 				07E3A0382691E52D0081C737 /* SpinnableViewModifier.swift in Sources */,
 				07E3A04E26939ACE0081C737 /* Ring.swift in Sources */,
 				07E3A04C26939A680081C737 /* MusicView.swift in Sources */,
 				07E3A0502693A33A0081C737 /* NavigationTestView.swift in Sources */,
 				07E3A046269397C80081C737 /* ControlBar.swift in Sources */,
+				07B4D60726A5B992002D7ADA /* Arrow.swift in Sources */,
 				07E3A03A2691E5590081C737 /* Rotation.swift in Sources */,
 				0746D4B72693E17B00B77F9E /* SellMeView.swift in Sources */,
 				07E3A042269395510081C737 /* MyState.swift in Sources */,
+				07D6399B269406DC0073E1AD /* GlowText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,10 +475,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -496,9 +531,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -530,12 +567,13 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -566,12 +604,13 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gokid.tkc.iPodTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

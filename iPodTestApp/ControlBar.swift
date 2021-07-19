@@ -21,13 +21,13 @@ struct ControlBar: View {
         HStack {
             ControlButton(size: buttonSize) {
                 Image(systemName: "backward.end.alt.fill")
-                    .foregroundColor(.red)
+                    .foregroundColor(Theme.colors.buttonTextColor)
             }
             Spacer()
             ControlButton( size: buttonSize) {
                 Text("MENU")
-                    .font(.body)
-                    .foregroundColor(.red)
+                    .fontWeight(.bold)
+                    .foregroundColor(Theme.colors.buttonTextColor)
             } action: {
                 state.stateDismiss?()
             }
@@ -35,20 +35,20 @@ struct ControlBar: View {
             Spacer()
             ControlButton(size: buttonSize) {
                 Image(systemName: "playpause.fill")
-                    .foregroundColor(.red)
+                    .foregroundColor(Theme.colors.buttonTextColor)
             }
             Spacer()
             ControlButton(size: buttonSize) {
                 Image(systemName: "forward.end.alt.fill")
-                    .foregroundColor(.red)
+                    .foregroundColor(Theme.colors.buttonTextColor)
             }
         }
     }
 }
 
-//struct ControlBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ControlBar(viewModel: <#ControlBarViewModel#>)
-//            .padding()
-//    }
-//}
+struct ControlBar_Previews: PreviewProvider {
+    static var previews: some View {
+        ControlBar(state: MyState(), viewModel: ControlBarViewModel(menuAction: {}), buttonSize: 80)
+            .padding()
+    }
+}

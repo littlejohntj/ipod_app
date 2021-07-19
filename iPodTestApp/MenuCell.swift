@@ -23,20 +23,22 @@ struct MenuCell: View {
     var text: String
     var selected: Bool
     var arrow: Bool
-    
-    let darkBlue = Color(.displayP3, red: 51/255, green: 57/255, blue: 90/255, opacity: 1)
-    let lightBlue = Color(.displayP3, red: 186/255, green: 199/255, blue: 217/255, opacity: 1)
-    
+        
     var body: some View {
         ZStack {
-            selected ? darkBlue.ignoresSafeArea() : lightBlue.ignoresSafeArea()
+            selected ? Theme.colors.darkColor.ignoresSafeArea() : Theme.colors.lightColor.ignoresSafeArea()
             HStack {
                 Text(text)
-                    .font(.custom("Chicago", size: 18))
-                    .foregroundColor( selected ? lightBlue : darkBlue)
+                    .font(.custom("Chicago", size: 22))
+                    .foregroundColor( selected ? Theme.colors.lightColor : Theme.colors.darkColor)
                     .padding()
                 Spacer()
-                if arrow { Image(systemName: "chevron.right").foregroundColor( selected ? lightBlue : darkBlue ).padding().font(.headline) }
+                if arrow {
+                    ArrowShape()
+                        .fill(selected ? Theme.colors.lightColor : Theme.colors.darkColor)
+                        .frame(width: 10, height: 16, alignment: .trailing)
+                        .padding([.trailing], 10)
+                }
             }.frame(height: 30)
         }
     }
