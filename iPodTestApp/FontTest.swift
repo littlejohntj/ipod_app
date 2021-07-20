@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct SellMe: View {
+struct FontTestView: View {
     var body: some View {
         Text("Hello, World!")
             .font(.custom("Chicago", size: 25))
@@ -16,10 +16,10 @@ struct SellMe: View {
     }
 }
 
-struct SellMe_Preview: PreviewProvider {
+struct FontTestView_Preview: PreviewProvider {
     static var previews: some View {
         Group {
-            SellMe()
+            FontTestView()
         }
     }
 }

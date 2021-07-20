@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Wheel: View {
     
-    var state: MyState
+    @EnvironmentObject var state: AppState
     var wheelButton:() -> ()
     var spaceingDistance: CGFloat = 100
     static let shift: CGFloat = 0.2
@@ -71,11 +71,11 @@ struct Wheel: View {
         state.down()
     }
 }
-
-struct Wheel_Previews: PreviewProvider {
-    static var previews: some View {
-        Wheel(state: MyState(), wheelButton: {})
-//        Wheel(wheelButton: {})
-            .padding()
-    }
-}
+//
+//struct Wheel_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Wheel(state: MyState(), wheelButton: {})
+////        Wheel(wheelButton: {})
+//            .padding()
+//    }
+//}

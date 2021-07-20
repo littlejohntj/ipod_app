@@ -13,7 +13,7 @@ struct ControlBarViewModel {
 }
 
 struct ControlBar: View {
-    var state: MyState
+    @EnvironmentObject var state: AppState
     var viewModel: ControlBarViewModel
     let buttonSize: CGFloat
     
@@ -45,10 +45,10 @@ struct ControlBar: View {
         }
     }
 }
-
-struct ControlBar_Previews: PreviewProvider {
-    static var previews: some View {
-        ControlBar(state: MyState(), viewModel: ControlBarViewModel(menuAction: {}), buttonSize: 80)
-            .padding()
-    }
-}
+//
+//struct ControlBar_Previews: PreviewProvider {
+//    static var previews: some View {
+////        ControlBar(state: MyState(), viewModel: ControlBarViewModel(menuAction: {}), buttonSize: 80)
+////            .padding()
+//    }
+//}

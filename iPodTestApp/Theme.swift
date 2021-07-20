@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Theme {
     static var colors: ColorTheme = BacklightOnColorTheme()
+    static var appState: AppState?
 }
 
 protocol ColorTheme {

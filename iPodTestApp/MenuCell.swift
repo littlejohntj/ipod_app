@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MenuCellViewModel {
     
-    var state: MyState
+    var state: LocalState
     var index: Int
     
     var text: String { state.items[index].name }

@@ -41,7 +41,8 @@ struct Screen<Content>: View where Content: View {
                         .fill( Theme.colors.lightColor )
                         .frame(width: blueWidth, height: blueHeight, alignment: .center)
                     VStack {
-                        TopMenuBar().frame(height: 15).padding([.top, .trailing], 10)
+                        TopMenuBar()
+                            .frame(height: 15).padding([.top, .trailing], 10)
                         Rectangle()
                             .fill( Theme.colors.darkColor )
                             .frame(height: 2)

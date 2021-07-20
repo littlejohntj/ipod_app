@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct iPodTestAppApp: App {
+    
+    var state = AppState()
+    
+    
+    init () {
+        Theme.appState = state
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(state: MyState())
+            ContentView(state: state)
         }
     }
 }
