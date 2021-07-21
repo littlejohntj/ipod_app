@@ -35,7 +35,8 @@ struct iPodCase_Preview: PreviewProvider {
                 iPodCase {
                     Text("")
                 }
-//                iPodHID(state: MyState())
+                iPodHID()
+                    .environmentObject(AppState())
             }
             .previewDevice("iPad Pro (11-inch) (3rd generation)")
         }

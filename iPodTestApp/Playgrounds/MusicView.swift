@@ -12,6 +12,7 @@ import MediaPlayer
 
 struct MusicView: View {
     var body: some View {
+        Text("Hi")
         VStack {
             List {
                 Text("sup")
@@ -29,16 +30,16 @@ struct MusicView: View {
             Button("Pause") {
                 SystemMusicPlayer.shared.pause()
             }.padding()
-            
+
             Button("Search") {
                 let request = MusicCatalogSearchRequest(term: "Drake", types: [Album.self])
-                
+
                 async {
                     let response = try await request.response()
                     print(response)
                 }
             }.padding()
-            
+
             Button("Library Request") {
                 print(artists())
             }.padding()
@@ -51,24 +52,24 @@ struct MusicView: View {
     }
     
     func playlists() -> [MPMediaItem]? {
-        
+
         guard let playlists = MPMediaQuery.playlists().items else {
             return nil
         }
-        
+
         let r = playlists.filter { $0.mediaType == MPMediaType.music }
-        
+
         print( r.map { $0.title } )
-        
+
         return playlists.filter { $0.mediaType == MPMediaType.music }
     }
     
     func artists() -> [MPMediaItem]? {
-        
+
         guard let artists = MPMediaQuery.artists().items else {
             return nil
         }
-        
+
         print( artists.map { $0.albumArtist } )
 
         return artists

@@ -20,6 +20,7 @@ struct iPodTestAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(state: state)
+//            MusicView()
         }
     }
 }

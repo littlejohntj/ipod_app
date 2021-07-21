@@ -10,16 +10,14 @@ import SwiftUI
 import Combine
 
 class MenuState: LocalState, ObservableObject {
+    var title: String = "iPod"
     
-    init() {
-        self.items = [ RowItem(name: "Music", arrow: true),
-                       RowItem(name: "Extras", arrow: true),
-                       RowItem(name: "Settings", arrow: true),
-                       RowItem(name: "Shuffle Songs", arrow: true),
-                       RowItem(name: "Backlight", arrow: false) ]
-    }
+    var items: [RowItem] = [ RowItem(name: "Music", arrow: true),
+                             RowItem(name: "Extras", arrow: true),
+                             RowItem(name: "Settings", arrow: true),
+                             RowItem(name: "Shuffle Songs", arrow: true),
+                             RowItem(name: "Backlight", arrow: false) ]
     
-    var items: [RowItem]
     @Published var selected: Int = 0
     
     func up() {

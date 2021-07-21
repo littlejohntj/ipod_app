@@ -9,6 +9,12 @@ import Foundation
 import SwiftUI
 import Combine
 
+enum RowItemAccessory {
+    case arrow
+    case toggle
+    case none
+}
+
 struct RowItem {
     
     init(name: String, arrow: Bool)  {

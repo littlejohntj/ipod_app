@@ -12,6 +12,7 @@ import Combine
 protocol LocalState {
     var items: [RowItem] { get }
     var selected: Int { get set }
+    var title: String { get }
     
     func up()
     func down()
