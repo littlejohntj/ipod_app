@@ -13,7 +13,7 @@ private let mainColor = Color.Neumorphic.main
 
 struct ControlButton<Content>: View where Content: View {
     
-//    @EnvironmentObject var state: MyState
+    @EnvironmentObject var appState: AppState
     var backlight: Bool = true
     let size: CGFloat
     var content: () -> Content
@@ -31,7 +31,7 @@ struct ControlButton<Content>: View where Content: View {
                     
                     Circle().fill(Color.white).frame(width: size - 8, height: size - 8)
                         .softOuterShadow(offset: 2, radius: 3)
-                    if backlight {
+                    if appState.backlight {
                         content()
                             .frame(width: size, height: size)
                             .multicolorGlow()

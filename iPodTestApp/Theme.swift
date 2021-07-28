@@ -9,8 +9,16 @@ import Foundation
 import SwiftUI
 
 struct Theme {
-    static var colors: ColorTheme = BacklightOnColorTheme()
+    static var colors: ColorTheme {
+        if let backlight = appState?.backlight {
+            return backlight ? onTheme : offTheme
+        }
+        
+        return offTheme
+    }
     static var appState: AppState?
+    static var onTheme: ColorTheme = BacklightOnColorTheme()
+    static var offTheme: ColorTheme = BacklightOffColorTheme()
 }
 
 protocol ColorTheme {
@@ -23,7 +31,7 @@ protocol ColorTheme {
 struct BacklightOnColorTheme: ColorTheme {
     
     var buttonTextColor = Color.red
-    var backgroundColor = Color.white
+    var backgroundColor = Color(.displayP3, red: 222/255, green: 234/255, blue: 251/255, opacity: 1)
     var darkColor = Color(.displayP3, red: 51/255, green: 57/255, blue: 90/255, opacity: 1)
     var lightColor = Color(.displayP3, red: 186/255, green: 199/255, blue: 217/255, opacity: 1)
 }

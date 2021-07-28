@@ -20,6 +20,8 @@ struct MenuCellViewModel {
 }
 
 struct MenuCell: View {
+    
+    @EnvironmentObject var appState: AppState
     var text: String
     var selected: Bool
     var arrow: Bool
@@ -39,7 +41,8 @@ struct MenuCell: View {
                         .frame(width: 10, height: 16, alignment: .trailing)
                         .padding([.trailing], 10)
                 }
-            }.frame(height: 30)
-        }
+            }
+        }.frame(height: 60)
     }
 }
+

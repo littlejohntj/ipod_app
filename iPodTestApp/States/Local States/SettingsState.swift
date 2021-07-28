@@ -14,6 +14,7 @@ class SettingsState: LocalState, ObservableObject {
     var title: String = "Settings"
     var proxy: ScrollViewProxy?
     @Published var selected: Int = 0
+    @Published var navigate: Bool = false
     var items: [RowItem] =  [   RowItem(name: "About", arrow: true),
                                 RowItem(name: "Main Menu", arrow: true),
                                 RowItem(name: "Shuffle", arrow: true),
@@ -53,5 +54,9 @@ class SettingsState: LocalState, ObservableObject {
 //           proxy.scrollTo(selected, anchor: .top)
 //       }
    }
+    
+    func selfNavigate() {
+        navigate = true
+    }
 
 }

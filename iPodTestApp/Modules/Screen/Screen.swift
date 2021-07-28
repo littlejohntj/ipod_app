@@ -12,6 +12,7 @@ struct Screen<Content>: View where Content: View {
     
     var width: CGFloat
     var container: () -> Content
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         
@@ -51,7 +52,6 @@ struct Screen<Content>: View where Content: View {
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
                         }
-                        
                     }
                 }.frame(width: blueWidth, height: blueHeight)
             }
@@ -72,5 +72,6 @@ struct ScreenView: View {
 struct Screen_Previews: PreviewProvider {
     static var previews: some View {
         ScreenView()
+            .previewDevice("iPhone 12 Pro")
     }
 }

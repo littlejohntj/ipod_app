@@ -1,19 +1,19 @@
 //
-//  QueryList.swift
+//  ArtistList.swift
 //  iPodTestApp
 //
-//  Created by TJ Littlejohn on 7/21/21.
+//  Created by TJ Littlejohn on 7/27/21.
 //
 
 import Foundation
 import SwiftUI
 import Combine
 
-struct QueryList: View {
+struct ArtistList: View {
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var appState: AppState
-    @StateObject var localState: QueryState
+    @StateObject var localState: ArtistState
     var body: some View {
         ZStack {
             Theme.colors.lightColor.edgesIgnoringSafeArea(.all)
@@ -33,29 +33,7 @@ struct QueryList: View {
                                 if let song = selection.song {
                                     NowPlayingView(song: song)
                                 } else {
-//                                    QueryList(localState: QueryState.songStateFromArtist(query: selection.name))
-                                    
-//                                    ArtistList(localState: ArtistState.stateForArtist(artist: selection.name))
-
-                                    if localState.title == "Artists" {
-                                        ArtistList(localState: ArtistState.stateForArtist(artist: selection.name))
-                                    } else if localState.title == "Albums" {
-                                        QueryList(localState: QueryState.songStateFromAlbum(query: selection.name))
-                                    } else if localState.title == "Genres" {
-                                        QueryList(localState: QueryState.songStateFromGenre(query: selection.name))
-                                    } else if localState.title == "Composers" {
-                                        QueryList(localState: QueryState.songStateFromComposer(query: selection.name))
-                                    }
-
-                                    // if artist
-
-
-
-                                    // if playlist
-
-                                    // if album
-
-
+                                                                        
                                 }
                             } label: {
                                 EmptyView()

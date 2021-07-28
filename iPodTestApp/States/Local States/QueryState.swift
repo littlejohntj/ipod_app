@@ -16,7 +16,10 @@ class QueryState: LocalState, ObservableObject {
         self.items = items
     }
                        
+    var appState: AppState?
     @Published var selected: Int = 0
+    @Published var navigate: Bool = false
+    var proxy: ScrollViewProxy?
     
     var title: String
     var items: [RowItem]
@@ -25,23 +28,148 @@ class QueryState: LocalState, ObservableObject {
         if selected < items.count - 1 {
            selected += 1
         }
+        
+        if let proxy = proxy {
+            proxy.scrollTo(selected, anchor: .center)
+        }
     }
 
     func down() {
         if selected > 0 {
            selected -= 1
         }
+        
+        if let proxy = proxy {
+            proxy.scrollTo(selected, anchor: .center)
+        }
     }
 
     class func items( for query: String ) -> [RowItem] {
-        return [RowItem(name: query, arrow: true)]
+        let all = MusicManager.artists()
+        return all.map { RowItem(name: $0, arrow: true) }
+    }
+    
+    class func songItemsForArtist( _ query: String ) -> [RowItem] {
+        let all = MusicManager.musicFromArtist(artist: query)
+        return all.map { RowItem(name: $0.title!, arrow: true, song: $0) }
+    }
+    
+    class func songItemsForAlbum( _ query: String ) -> [RowItem] {
+        let all = MusicManager.musicFromAlbum(album: query)
+        return all.map { RowItem(name: $0.title!, arrow: true, song: $0) }
+    }
+    
+    class func songItemsForGenre( _ query: String ) -> [RowItem] {
+        let all = MusicManager.musicFromGenre(genre: query)
+        return all.map { RowItem(name: $0.title!, arrow: true, song: $0) }
+    }
+    
+    class func songItemsForComposer( _ query: String ) -> [RowItem] {
+        let all = MusicManager.musicFromComposer(composers: query)
+        return all.map { RowItem(name: $0.title!, arrow: true, song: $0) }
     }
 
+
     class func stateFromQuery( query: String ) -> QueryState {
-        let items = QueryState.items(for: query)
+        
+        switch query {
+        case "Songs":
+            let items = QueryState.allSongs()
+            return QueryState(title: query, items: items)
+        case "Albums":
+            let items = QueryState.allAlbums()
+            return QueryState(title: query, items: items)
+        case "Playlist":
+            let items = QueryState.allPlaylists()
+            return QueryState(title: query, items: items)
+        case "Artists":
+            let items = QueryState.allArtists()
+            return QueryState(title: query, items: items)
+        case "Genres":
+            let items = QueryState.allGenres()
+            return QueryState(title: query, items: items)
+        case "Composers":
+            let items = QueryState.allComposers()
+            return QueryState(title: query, items: items)
+        default:
+            let items = QueryState.items(for: query)
+            return QueryState(title: query, items: items)
+        }
+        
+    }
+    
+    class func songStateFromAlbum( query: String ) -> QueryState {
+        let items = QueryState.songItemsForAlbum(query)
         return QueryState(title: query, items: items)
     }
     
+    class func songStateFromArtist( query: String ) -> QueryState {
+        let items = QueryState.songItemsForArtist(query)
+        return QueryState(title: query, items: items)
+    }
     
-
+    class func songStateFromGenre( query: String ) -> QueryState {
+        let items = QueryState.songItemsForGenre(query)
+        return QueryState(title: query, items: items)
+    }
+    
+    class func songStateFromComposer( query: String ) -> QueryState {
+        let items = QueryState.songItemsForComposer(query)
+        return QueryState(title: query, items: items)
+    }
+    
+    class func allSongs() -> [RowItem] {
+        let all = MusicManager.allMusic()
+        return all.map { RowItem(name: $0.title!, arrow: true, song: $0) }
+    }
+    
+    class func allAlbums() -> [RowItem] {
+        let all = MusicManager.allAlbumTitles()
+        return all.map { RowItem(name: $0, arrow: true) }
+    }
+    
+    class func allGenres() -> [RowItem] {
+        let all = MusicManager.allGenres()
+        return all.map { RowItem(name: $0, arrow: true) }
+    }
+    
+    class func allComposers() -> [RowItem] {
+        let all = MusicManager.allComposers()
+        return all.map { RowItem(name: $0, arrow: true) }
+    }
+    
+    class func allPlaylists() -> [RowItem] {
+        let all = MusicManager.allPlaylists()
+        return all.map { RowItem(name: $0.title!, arrow: true) }
+    }
+    
+    class func allArtists() -> [RowItem] {
+        let all = MusicManager.artists()
+        return all.map {
+            RowItem(name: $0, arrow: true)
+        }
+    }
+    
+    func selfNavigate() {
+        
+        let selection = items[selected]
+        
+        if let song = selection.song {
+            
+            if let currentSongId = appState?.currentSong?.playbackStoreID, currentSongId == song.playbackStoreID {
+                navigate = true
+            } else {
+                appState?.currentSong = song
+                navigate = true
+                async {
+                    appState?.playCurrentTrackFromBegining()
+                }
+            }
+        } else {
+            navigate = true
+        }
+        
+        
+        
+    }
 }

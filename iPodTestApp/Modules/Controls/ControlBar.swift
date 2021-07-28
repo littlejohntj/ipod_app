@@ -22,6 +22,8 @@ struct ControlBar: View {
             ControlButton(size: buttonSize) {
                 Image(systemName: "backward.end.alt.fill")
                     .foregroundColor(Theme.colors.buttonTextColor)
+            } action: {
+                state.backwardsSong()
             }
             Spacer()
             ControlButton( size: buttonSize) {
@@ -36,11 +38,15 @@ struct ControlBar: View {
             ControlButton(size: buttonSize) {
                 Image(systemName: "playpause.fill")
                     .foregroundColor(Theme.colors.buttonTextColor)
+            } action: {
+                state.playPause()
             }
             Spacer()
             ControlButton(size: buttonSize) {
                 Image(systemName: "forward.end.alt.fill")
                     .foregroundColor(Theme.colors.buttonTextColor)
+            } action: {
+                state.fowardSong()
             }
         }
     }

@@ -10,9 +10,15 @@ import SwiftUI
 
 struct TopMenuBar: View {
     var body: some View {
-        ZStack {
-            iPodTitle()
-            Battery()
+        VStack {
+            ZStack {
+                iPodTitle()
+                Battery()
+            }
+            .frame(width: .infinity, height: 18, alignment: .center)
+//            Rectangle()
+//                .foregroundColor( Theme.colors.darkColor )
+//                .frame(width: .infinity, height: 2, alignment: .bottom)
         }
     }
 }
@@ -22,6 +28,7 @@ struct iPodTitle: View {
         Text("iPod")
             .font(.custom("Chicago", size: 22))
             .foregroundColor( Theme.colors.darkColor )
+            .frame(width: .infinity, height: 22, alignment: .center)
     }
 }
 

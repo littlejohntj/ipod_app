@@ -13,7 +13,7 @@ struct Wheel: View {
     @EnvironmentObject var state: AppState
     var wheelButton:() -> ()
     var spaceingDistance: CGFloat = 100
-    static let shift: CGFloat = 0.2
+    static let shift: CGFloat = 0.3
     
     let num: CGFloat = 110
     let size: CGFloat = 320

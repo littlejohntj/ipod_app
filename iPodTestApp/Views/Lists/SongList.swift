@@ -1,52 +1,57 @@
 //
-//  MusicList.swift
+//  SongList.swift
 //  iPodTestApp
 //
-//  Created by TJ Littlejohn on 7/21/21.
+//  Created by TJ Littlejohn on 7/24/21.
 //
 
 import Foundation
 import SwiftUI
 import Combine
 
-struct MusicList: View {
+struct SongList: View {
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var appState: AppState
-    @StateObject var musicState: MusicState = MusicState()
+    @StateObject var localState: QueryState
+    
     var body: some View {
         ZStack {
             Theme.colors.lightColor.edgesIgnoringSafeArea(.all)
             ScrollViewReader { proxy in
                 List {
-                    ForEach(musicState.items.indices, id: \.self) { index in
+                    ForEach(localState.items.indices, id: \.self) { index in
+                        
                         ZStack {
-                            MenuCell(text: musicState.items[index].name,
-                                     selected: musicState.selected == index,
-                                     arrow: musicState.items[index].arrow)
-                            NavigationLink(isActive: $musicState.navigate ) {
-                                QueryList(localState: QueryState.stateFromQuery(query: musicState.items[musicState.selected].name))
+                            MenuCell(text: localState.items[index].name,
+                                     selected: localState.selected == index,
+                                     arrow: localState.items[index].arrow)
+                            NavigationLink(isActive: $localState.navigate ) {
+                                QueryList(localState: QueryState.songStateFromArtist(query: localState.items[localState.selected].name) )
                             } label: {
                                 EmptyView()
                             }
                             .frame(width: 0, height: 0)
                             .hidden()
+                            
                         }
                         .listRowInsets(EdgeInsets())
                         .listRowSeparator(.hidden)
+                        
                     }
                 }
                 .onAppear(perform: {
-                    musicState.proxy = proxy
+                    localState.proxy = proxy
                 })
                 .listStyle(.plain)
                 .environment(\.defaultMinListRowHeight, 40)
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
+            }.onAppear {
+                appState.setStateDismiss(dismiss: dismiss)
+                appState.setLocalState(localState: localState)
             }
-        }.onAppear {
-            appState.setStateDismiss(dismiss: dismiss)
-            appState.setLocalState(localState: musicState)
         }
     }
+    
 }

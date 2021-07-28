@@ -13,7 +13,11 @@ protocol LocalState {
     var items: [RowItem] { get }
     var selected: Int { get set }
     var title: String { get }
+    var navigate: Bool { get set }
     
     func up()
     func down()
+    func selfNavigate()
 }
+
+

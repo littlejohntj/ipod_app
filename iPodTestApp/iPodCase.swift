@@ -33,10 +33,11 @@ struct iPodCase_Preview: PreviewProvider {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 iPodCase {
-                    Text("")
+                    iPodHID()
+                        .environmentObject(AppState())
                 }
-                iPodHID()
-                    .environmentObject(AppState())
+//                iPodHID()
+//                    .environmentObject(AppState())
             }
             .previewDevice("iPad Pro (11-inch) (3rd generation)")
         }

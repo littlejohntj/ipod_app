@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074516BE26AB8FF800D7C54E /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074516BD26AB8FF800D7C54E /* MusicManager.swift */; };
 		0746D4B52693E0E800B77F9E /* Chicago-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0746D4B42693E0E800B77F9E /* Chicago-Regular.ttf */; };
 		0746D4B72693E17B00B77F9E /* FontTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746D4B62693E17B00B77F9E /* FontTest.swift */; };
 		0746D4B92693E53600B77F9E /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746D4B82693E53600B77F9E /* Battery.swift */; };
+		075C6C4B26AC5DBE002C4C25 /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C6C4A26AC5DBE002C4C25 /* SongList.swift */; };
+		075C6C4D26AC5E3D002C4C25 /* SongState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C6C4C26AC5E3D002C4C25 /* SongState.swift */; };
 		076905A726A709EA007568F4 /* iPodTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076905A626A709EA007568F4 /* iPodTestAppApp.swift */; };
 		076905AA26A7146B007568F4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076905A926A7146B007568F4 /* AppState.swift */; };
 		076905AC26A714B9007568F4 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076905AB26A714B9007568F4 /* LocalState.swift */; };
 		076905AF26A71574007568F4 /* MenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076905AE26A71574007568F4 /* MenuState.swift */; };
 		076905B126A71591007568F4 /* MusicState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076905B026A71591007568F4 /* MusicState.swift */; };
 		076905B326A715C4007568F4 /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076905B226A715C4007568F4 /* RowItem.swift */; };
+		07AEAF3926B0EE7900600F99 /* key_press_click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 07AEAF3826B0EDB800600F99 /* key_press_click.m4a */; };
 		07B4D60726A5B992002D7ADA /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4D60626A5B992002D7ADA /* Arrow.swift */; };
 		07B4D60926A5C0BD002D7ADA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4D60826A5C0BD002D7ADA /* Theme.swift */; };
 		07C103A42693F6050076C5B4 /* iPodCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C103A32693F6050076C5B4 /* iPodCase.swift */; };
@@ -33,6 +37,7 @@
 		07CF18A6268FC8E900C43932 /* iPodTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18A5268FC8E900C43932 /* iPodTestAppTests.swift */; };
 		07CF18B0268FC8E900C43932 /* iPodTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18AF268FC8E900C43932 /* iPodTestAppUITests.swift */; };
 		07CF18C0268FD45400C43932 /* TopMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF18BF268FD45400C43932 /* TopMenuBar.swift */; };
+		07D3080126AE0D9A00321BDA /* PlaybackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3080026AE0D9A00321BDA /* PlaybackBar.swift */; };
 		07D6399B269406DC0073E1AD /* GlowText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6399A269406DC0073E1AD /* GlowText.swift */; };
 		07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */; };
 		07E3A0382691E52D0081C737 /* SpinnableViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */; };
@@ -47,6 +52,10 @@
 		07E3A04E26939ACE0081C737 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A04D26939ACE0081C737 /* Ring.swift */; };
 		07E3A0542693D34E0081C737 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 07E3A0532693D34E0081C737 /* Neumorphic */; };
 		07E3A0562693D5B20081C737 /* NeoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3A0552693D5B20081C737 /* NeoView.swift */; };
+		07EB155C26B0C5F4009595E5 /* ArtistList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB155B26B0C5F4009595E5 /* ArtistList.swift */; };
+		07EB155E26B0C600009595E5 /* ArtistState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB155D26B0C600009595E5 /* ArtistState.swift */; };
+		07EB156026B0D109009595E5 /* AlbumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB155F26B0D109009595E5 /* AlbumList.swift */; };
+		07EB156226B0D112009595E5 /* AlbumState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB156126B0D112009595E5 /* AlbumState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,15 +76,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074516BD26AB8FF800D7C54E /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 		0746D4B42693E0E800B77F9E /* Chicago-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chicago-Regular.ttf"; sourceTree = "<group>"; };
 		0746D4B62693E17B00B77F9E /* FontTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTest.swift; sourceTree = "<group>"; };
 		0746D4B82693E53600B77F9E /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		075C6C4A26AC5DBE002C4C25 /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
+		075C6C4C26AC5E3D002C4C25 /* SongState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongState.swift; sourceTree = "<group>"; };
 		076905A626A709EA007568F4 /* iPodTestAppApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPodTestAppApp.swift; sourceTree = "<group>"; };
 		076905A926A7146B007568F4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		076905AB26A714B9007568F4 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		076905AE26A71574007568F4 /* MenuState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuState.swift; sourceTree = "<group>"; };
 		076905B026A71591007568F4 /* MusicState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicState.swift; sourceTree = "<group>"; };
 		076905B226A715C4007568F4 /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
+		07AEAF3826B0EDB800600F99 /* key_press_click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = key_press_click.m4a; sourceTree = "<group>"; };
 		07B4D60626A5B992002D7ADA /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		07B4D60826A5C0BD002D7ADA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		07C103A32693F6050076C5B4 /* iPodCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodCase.swift; sourceTree = "<group>"; };
@@ -96,6 +109,8 @@
 		07CF18AB268FC8E900C43932 /* iPodTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPodTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CF18AF268FC8E900C43932 /* iPodTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodTestAppUITests.swift; sourceTree = "<group>"; };
 		07CF18BF268FD45400C43932 /* TopMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuBar.swift; sourceTree = "<group>"; };
+		07D307FF26AE0A0200321BDA /* key_press_click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = key_press_click.caf; sourceTree = "<group>"; };
+		07D3080026AE0D9A00321BDA /* PlaybackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackBar.swift; sourceTree = "<group>"; };
 		07D6399A269406DC0073E1AD /* GlowText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowText.swift; sourceTree = "<group>"; };
 		07E3A0352691E5050081C737 /* CGPoint+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Conversion.swift"; sourceTree = "<group>"; };
 		07E3A0372691E52D0081C737 /* SpinnableViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnableViewModifier.swift; sourceTree = "<group>"; };
@@ -111,6 +126,10 @@
 		07E3A04B26939A680081C737 /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		07E3A04D26939ACE0081C737 /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		07E3A0552693D5B20081C737 /* NeoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoView.swift; sourceTree = "<group>"; };
+		07EB155B26B0C5F4009595E5 /* ArtistList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistList.swift; sourceTree = "<group>"; };
+		07EB155D26B0C600009595E5 /* ArtistState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistState.swift; sourceTree = "<group>"; };
+		07EB155F26B0D109009595E5 /* AlbumList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumList.swift; sourceTree = "<group>"; };
+		07EB156126B0D112009595E5 /* AlbumState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumState.swift; sourceTree = "<group>"; };
 		07F99D122693EDA6007840DF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -141,6 +160,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		074516BC26AB8FE500D7C54E /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				074516BD26AB8FF800D7C54E /* MusicManager.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		076905A826A7145A007568F4 /* States */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,9 +182,12 @@
 			isa = PBXGroup;
 			children = (
 				076905AE26A71574007568F4 /* MenuState.swift */,
+				07EB156126B0D112009595E5 /* AlbumState.swift */,
+				07EB155D26B0C600009595E5 /* ArtistState.swift */,
 				076905B026A71591007568F4 /* MusicState.swift */,
 				07CD01B526A8547900416F32 /* SettingsState.swift */,
 				07CD01B326A7811700416F32 /* QueryState.swift */,
+				075C6C4C26AC5E3D002C4C25 /* SongState.swift */,
 				07CD01B926A85D3800416F32 /* NowPlayingState.swift */,
 			);
 			path = "Local States";
@@ -176,6 +206,7 @@
 			children = (
 				0746D4B82693E53600B77F9E /* Battery.swift */,
 				07B4D60626A5B992002D7ADA /* Arrow.swift */,
+				07D3080026AE0D9A00321BDA /* PlaybackBar.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -195,6 +226,9 @@
 				07CD01C326A861BD00416F32 /* MenuList.swift */,
 				07CD01BD26A8610300416F32 /* MusicList.swift */,
 				07CD01C126A8619200416F32 /* QueryList.swift */,
+				07EB155B26B0C5F4009595E5 /* ArtistList.swift */,
+				07EB155F26B0D109009595E5 /* AlbumList.swift */,
+				075C6C4A26AC5DBE002C4C25 /* SongList.swift */,
 				07CD01BF26A8613F00416F32 /* SettingsList.swift */,
 			);
 			path = Lists;
@@ -279,6 +313,8 @@
 		07CF1893268FC8E800C43932 /* iPodTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				07D307FF26AE0A0200321BDA /* key_press_click.caf */,
+				07AEAF3826B0EDB800600F99 /* key_press_click.m4a */,
 				07E3A03E269392E00081C737 /* iPodTestApp.entitlements */,
 				07E3A03B2692015D0081C737 /* Info.plist */,
 				076905A626A709EA007568F4 /* iPodTestAppApp.swift */,
@@ -289,6 +325,7 @@
 				076905B426A71607007568F4 /* View Models */,
 				076905A826A7145A007568F4 /* States */,
 				07B4D60526A5B97A002D7ADA /* Shapes */,
+				074516BC26AB8FE500D7C54E /* Music */,
 				07B4D60826A5C0BD002D7ADA /* Theme.swift */,
 				07C103A32693F6050076C5B4 /* iPodCase.swift */,
 				07CD01C826A863E600416F32 /* Playgrounds */,
@@ -454,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07AEAF3926B0EE7900600F99 /* key_press_click.m4a in Resources */,
 				0746D4B52693E0E800B77F9E /* Chicago-Regular.ttf in Resources */,
 				07CF189C268FC8E900C43932 /* Preview Assets.xcassets in Resources */,
 				07CF1899268FC8E900C43932 /* Assets.xcassets in Resources */,
@@ -484,12 +522,15 @@
 				07CD01B626A8547900416F32 /* SettingsState.swift in Sources */,
 				07CD01B426A7811700416F32 /* QueryState.swift in Sources */,
 				07E3A044269395970081C737 /* ControlButton.swift in Sources */,
+				074516BE26AB8FF800D7C54E /* MusicManager.swift in Sources */,
 				07E3A03D269373FB0081C737 /* Screen.swift in Sources */,
 				07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */,
 				07B4D60926A5C0BD002D7ADA /* Theme.swift in Sources */,
+				07EB156026B0D109009595E5 /* AlbumList.swift in Sources */,
 				07C103A42693F6050076C5B4 /* iPodCase.swift in Sources */,
 				076905B126A71591007568F4 /* MusicState.swift in Sources */,
 				07E3A04A269399740081C737 /* Wheel.swift in Sources */,
+				075C6C4D26AC5E3D002C4C25 /* SongState.swift in Sources */,
 				07CF18C0268FD45400C43932 /* TopMenuBar.swift in Sources */,
 				07CD01C426A861BD00416F32 /* MenuList.swift in Sources */,
 				076905AC26A714B9007568F4 /* LocalState.swift in Sources */,
@@ -498,18 +539,23 @@
 				07CF1897268FC8E800C43932 /* ContentView.swift in Sources */,
 				07E3A048269398A10081C737 /* MenuCell.swift in Sources */,
 				07CD01BE26A8610300416F32 /* MusicList.swift in Sources */,
+				07EB155E26B0C600009595E5 /* ArtistState.swift in Sources */,
 				0746D4B92693E53600B77F9E /* Battery.swift in Sources */,
 				076905B326A715C4007568F4 /* RowItem.swift in Sources */,
 				07E3A0382691E52D0081C737 /* SpinnableViewModifier.swift in Sources */,
 				076905A726A709EA007568F4 /* iPodTestAppApp.swift in Sources */,
+				07D3080126AE0D9A00321BDA /* PlaybackBar.swift in Sources */,
 				07E3A04E26939ACE0081C737 /* Ring.swift in Sources */,
 				07E3A04C26939A680081C737 /* MusicView.swift in Sources */,
 				07E3A046269397C80081C737 /* ControlBar.swift in Sources */,
 				076905AA26A7146B007568F4 /* AppState.swift in Sources */,
 				07CD01C026A8613F00416F32 /* SettingsList.swift in Sources */,
 				07B4D60726A5B992002D7ADA /* Arrow.swift in Sources */,
+				07EB156226B0D112009595E5 /* AlbumState.swift in Sources */,
+				07EB155C26B0C5F4009595E5 /* ArtistList.swift in Sources */,
 				07E3A03A2691E5590081C737 /* Rotation.swift in Sources */,
 				07CD01BA26A85D3800416F32 /* NowPlayingState.swift in Sources */,
+				075C6C4B26AC5DBE002C4C25 /* SongList.swift in Sources */,
 				07CD01C226A8619200416F32 /* QueryList.swift in Sources */,
 				0746D4B72693E17B00B77F9E /* FontTest.swift in Sources */,
 				07CD01B826A857CC00416F32 /* NowPlaying.swift in Sources */,
@@ -702,7 +748,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -740,7 +786,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

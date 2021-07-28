@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 import Combine
+import MusicKit
+import MediaPlayer
 
 enum RowItemAccessory {
     case arrow
@@ -17,12 +19,14 @@ enum RowItemAccessory {
 
 struct RowItem {
     
-    init(name: String, arrow: Bool)  {
+    init(name: String, arrow: Bool, song: MPMediaItem? = nil)  {
         self.name = name
         self.arrow = arrow
+        self.song = song
     }
     
     let id = UUID()
     let name: String
     let arrow: Bool
+    let song: MPMediaItem?
 }

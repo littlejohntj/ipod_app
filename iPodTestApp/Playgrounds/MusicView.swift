@@ -12,7 +12,6 @@ import MediaPlayer
 
 struct MusicView: View {
     var body: some View {
-        Text("Hi")
         VStack {
             List {
                 Text("sup")

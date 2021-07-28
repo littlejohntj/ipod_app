@@ -14,27 +14,13 @@ class MusicState: LocalState, ObservableObject {
     var title: String = "Music"
     var proxy: ScrollViewProxy?
     @Published var selected: Int = 0
+    @Published var navigate: Bool = false
     var items: [RowItem] =   [   RowItem(name: "Playlist", arrow: true),
                                 RowItem(name: "Artists", arrow: true),
                                 RowItem(name: "Albums", arrow: true),
                                 RowItem(name: "Songs", arrow: true),
                                 RowItem(name: "Genres", arrow: true),
-                                RowItem(name: "Composers", arrow: true),
-                                RowItem(name: "Audiobooks", arrow: true),
-                                 RowItem(name: "Playlist", arrow: true),
-                                 RowItem(name: "Artists", arrow: true),
-                                 RowItem(name: "Albums", arrow: true),
-                                 RowItem(name: "Songs", arrow: true),
-                                 RowItem(name: "Genres", arrow: true),
-                                 RowItem(name: "Composers", arrow: true),
-                                 RowItem(name: "Audiobooks", arrow: true),
-                                 RowItem(name: "Playlist", arrow: true),
-                                 RowItem(name: "Artists", arrow: true),
-                                 RowItem(name: "Albums", arrow: true),
-                                 RowItem(name: "Songs", arrow: true),
-                                 RowItem(name: "Genres", arrow: true),
-                                 RowItem(name: "Composers", arrow: true),
-                                 RowItem(name: "Audiobooks", arrow: true)
+                                RowItem(name: "Composers", arrow: true)
                             ]
                        
    func up() {
@@ -44,9 +30,9 @@ class MusicState: LocalState, ObservableObject {
        
        print("up")
        
-//       if let proxy = proxy {
-//           proxy.scrollTo(selected, anchor: .bottom)
-//       }
+       if let proxy = proxy {
+           proxy.scrollTo(selected, anchor: .bottom)
+       }
    }
    
    func down() {
@@ -56,9 +42,13 @@ class MusicState: LocalState, ObservableObject {
        
        print("down")
        
-//       if let proxy = proxy {
-//           proxy.scrollTo(selected, anchor: .top)
-//       }
+       if let proxy = proxy {
+           proxy.scrollTo(selected, anchor: .top)
+       }
    }
+    
+    func selfNavigate() {
+        navigate = true
+    }
 
 }

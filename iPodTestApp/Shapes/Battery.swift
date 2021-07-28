@@ -44,8 +44,6 @@ struct BatteryView: View {
                     .fill(color)
             }
         }
-//        .frame(width: 200, height: 100, alignment: .center)
-        
     }
 }
 

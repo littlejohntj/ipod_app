@@ -18,11 +18,11 @@ struct ContentView: View {
             iPodHID()
         }
         .environmentObject(state)
-//        .onAppear {
-////            async {
-////                await MusicAuthorization.request()
-////            }
-//        }
+        .onAppear {
+            async {
+                await MusicAuthorization.request()
+            }
+        }
     }
 }
 
@@ -43,7 +43,8 @@ struct iPodHID: View {
                 .frame(width: 420, height: 90, alignment: .center)
                 .padding()
             Wheel {
-                appState.backlight.toggle()
+                print("suppppp")
+                appState.selfNavigate()
             }
             .frame(width: 340, height: 340, alignment: .top)
                 

@@ -8,17 +8,20 @@
 import Foundation
 import SwiftUI
 import Combine
+import MusicKit
+import MediaPlayer
 
 struct NowPlayingView: View {
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var appState: AppState
     @StateObject var nowPlayingState: NowPlayingState = NowPlayingState()
+    var song: MPMediaItem
     
     var body: some View {
         ZStack {
             Theme.colors.lightColor.edgesIgnoringSafeArea(.all)
-            NowPlaying()
+            NowPlaying(nowPlayingState: nowPlayingState)
         }
         .onAppear {
             appState.setStateDismiss(dismiss: dismiss)
@@ -30,10 +33,12 @@ struct NowPlayingView: View {
 }
 
 struct NowPlaying: View {
+    @EnvironmentObject var appState: AppState
+    @StateObject var nowPlayingState: NowPlayingState
     var body: some View {
         VStack {
             HStack {
-                Text("1 of 12")
+                Text("\(appState.currentSong!.albumTrackNumber) of \(appState.currentSong!.albumTrackCount)")
                     .font(.custom("Chicago", size: 18))
                 Spacer()
             }
@@ -41,7 +46,7 @@ struct NowPlaying: View {
             Spacer()
             TrackInfoView()
             Spacer()
-            TimeTracker()
+            TimeTracker(localState: nowPlayingState)
                 .padding([.leading, .trailing, .bottom], 10)
         }
         .font(.custom("Chicago", size: 22))
@@ -50,35 +55,60 @@ struct NowPlaying: View {
 }
 
 struct TrackInfoView: View {
+    @EnvironmentObject var appState: AppState
+    
     var body: some View {
         VStack {
-            Text("Vertigo")
-            Text("U1")
-            Text("How to Dismantle")
+            Text(appState.currentSong!.title!)
+
+            Text(appState.currentSong!.artist!)
+            Text(appState.currentSong!.albumTitle!)
         }
         .padding(10)
     }
 }
 
 struct TimeTracker: View {
+    @EnvironmentObject var appState: AppState
+    @State var leftText: String = "0:00"
+    @State var rightText: String = "0:00"
+    @StateObject var localState: NowPlayingState
+    
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 12, style: .circular)
-                .frame(width: nil, height: 12, alignment: .bottom)
-            HStack {
-                Text("0:43")
-                Spacer()
-                Text("-2:43")
+            ZStack {
+                RoundedRectangle(cornerRadius: 12, style: .circular)
+                    .stroke(Theme.colors.darkColor, lineWidth: 2)
+                    .frame(width: nil, height: 12, alignment: .bottom)
+                if localState.seekMode {
+                    EmptyView()
+                } else {
+                    RoundedRectangle(cornerRadius: 12, style: .circular)
+                        .fill(Theme.colors.darkColor)
+                        .frame(width: nil, height: 12, alignment: .bottom)
+                }
             }
+            HStack {
+                Text(leftText)
+                Spacer()
+                Text(rightText)
+            }
+            .onReceive(appState.timer) { time in
+                leftText = appState.currentPlaybackString()
+                rightText = appState.endPlaybackString()
+            }
+        }.onAppear {
+            leftText = appState.currentPlaybackString()
+            rightText = appState.endPlaybackString()
         }
     }
 }
 
-struct NowPlaying_Preview: PreviewProvider {
-    static var previews: some View {
-        Group {
-            NowPlaying()
-                .previewDevice("iPhone 12 Pro")
-        }
-    }
-}
+//struct NowPlaying_Preview: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            NowPlaying(song: <#T##MPMediaItem#>)
+//                .previewDevice("iPhone 12 Pro")
+//        }
+//    }
+//}
