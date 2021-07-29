@@ -11,6 +11,10 @@ import Combine
 
 class MusicState: LocalState, ObservableObject {
     
+    var onScreenItemCount: Int = 6
+    var currentTop: Int = 0
+    var currentBottom: Int = 5
+    
     var title: String = "Music"
     var proxy: ScrollViewProxy?
     @Published var selected: Int = 0
@@ -22,30 +26,6 @@ class MusicState: LocalState, ObservableObject {
                                 RowItem(name: "Genres", arrow: true),
                                 RowItem(name: "Composers", arrow: true)
                             ]
-                       
-   func up() {
-       if selected < items.count - 1 {
-           selected += 1
-       }
-       
-       print("up")
-       
-       if let proxy = proxy {
-           proxy.scrollTo(selected, anchor: .bottom)
-       }
-   }
-   
-   func down() {
-       if selected > 0 {
-           selected -= 1
-       }
-       
-       print("down")
-       
-       if let proxy = proxy {
-           proxy.scrollTo(selected, anchor: .top)
-       }
-   }
     
     func selfNavigate() {
         navigate = true

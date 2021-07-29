@@ -33,7 +33,7 @@ struct MenuCell: View {
                 Text(text)
                     .font(.custom("Chicago", size: 22))
                     .foregroundColor( selected ? Theme.colors.lightColor : Theme.colors.darkColor)
-                    .padding()
+                    .padding(.leading)
                 Spacer()
                 if arrow {
                     ArrowShape()
@@ -42,7 +42,8 @@ struct MenuCell: View {
                         .padding([.trailing], 10)
                 }
             }
-        }.frame(height: 60)
+        }
+        .frame( height: 40 )
     }
 }
 

@@ -11,6 +11,12 @@ import Combine
 
 class NowPlayingState: LocalState, ObservableObject {
     
+    var proxy: ScrollViewProxy?
+    
+    var onScreenItemCount: Int = 6
+    var currentTop: Int = 0
+    var currentBottom: Int = 5
+    
     var title: String = "Now Playing"
     var items: [RowItem] = []
     

@@ -13,6 +13,10 @@ import AVFoundation
 
 class AlbumState: LocalState, ObservableObject {
     
+    var onScreenItemCount: Int = 6
+    var currentTop: Int = 0
+    var currentBottom: Int = 5
+    
     init ( title: String, items: [RowItem] ) {
         self.title = title
         self.items = items
@@ -24,18 +28,6 @@ class AlbumState: LocalState, ObservableObject {
     var proxy: ScrollViewProxy?
     @Published var selected: Int = 0
     @Published var navigate: Bool = false
-        
-    func up() {
-        if selected < items.count - 1 {
-            selected += 1
-        }
-    }
-    
-    func down() {
-        if selected > 0 {
-            selected -= 1
-        }
-    }
     
     func selfNavigate() {
         navigate = true

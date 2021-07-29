@@ -41,17 +41,20 @@ struct Screen<Content>: View where Content: View {
                     Rectangle()
                         .fill( Theme.colors.lightColor )
                         .frame(width: blueWidth, height: blueHeight, alignment: .center)
-                    VStack {
+                    VStack( spacing: 0 ) {
                         TopMenuBar()
-                            .frame(height: 15).padding([.top, .trailing], 10)
+                            .frame(height: 32).padding([.top], 3)
                         Rectangle()
                             .fill( Theme.colors.darkColor )
+                            .frame(height: 2)
+                        Spacer()
                             .frame(height: 2)
                         NavigationView {
                             container()
                             .navigationBarTitle("")
                             .navigationBarHidden(true)
                         }
+                        .navigationViewStyle(StackNavigationViewStyle())
                     }
                 }.frame(width: blueWidth, height: blueHeight)
             }

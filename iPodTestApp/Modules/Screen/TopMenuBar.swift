@@ -14,12 +14,13 @@ struct TopMenuBar: View {
             ZStack {
                 iPodTitle()
                 Battery()
+                    .padding(.trailing)
             }
-            .frame(width: .infinity, height: 18, alignment: .center)
 //            Rectangle()
 //                .foregroundColor( Theme.colors.darkColor )
 //                .frame(width: .infinity, height: 2, alignment: .bottom)
         }
+//        .frame(height: 35)
     }
 }
 

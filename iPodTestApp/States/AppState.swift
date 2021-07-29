@@ -26,18 +26,20 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
         
         playSound()
         
-        if let localState = self.localState {
-            localState.up()
-        }
+        localState?.up()
+//        if let localState = self.localState {
+//            localState.up()
+//        }
     }
     
     func down() {
         
         playSound()
+        localState?.down()
         
-        if let localState = self.localState {
-            localState.down()
-        }
+//        if let localState = self.localState {
+//            localState.down()
+//        }
     }
     
     func setStateDismiss( dismiss: DismissAction ) {
@@ -115,9 +117,9 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     }
     
     func playSound() {
-        async {
-            bombSoundEffect?.play()
-        }
+//        async {
+//            bombSoundEffect?.play()
+//        }
     }
     
 }

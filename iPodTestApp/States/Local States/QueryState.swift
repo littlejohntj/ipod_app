@@ -11,6 +11,10 @@ import Combine
 
 class QueryState: LocalState, ObservableObject {
     
+    var onScreenItemCount: Int = 6
+    var currentTop: Int = 0
+    var currentBottom: Int = 5
+    
     init ( title: String, items: [RowItem] ) {
         self.title = title
         self.items = items
@@ -23,26 +27,6 @@ class QueryState: LocalState, ObservableObject {
     
     var title: String
     var items: [RowItem]
-                       
-    func up() {
-        if selected < items.count - 1 {
-           selected += 1
-        }
-        
-        if let proxy = proxy {
-            proxy.scrollTo(selected, anchor: .center)
-        }
-    }
-
-    func down() {
-        if selected > 0 {
-           selected -= 1
-        }
-        
-        if let proxy = proxy {
-            proxy.scrollTo(selected, anchor: .center)
-        }
-    }
 
     class func items( for query: String ) -> [RowItem] {
         let all = MusicManager.artists()

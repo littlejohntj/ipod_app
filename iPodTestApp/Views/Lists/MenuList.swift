@@ -18,42 +18,42 @@ struct MenuList: View {
         ZStack {
             Theme.colors.lightColor.edgesIgnoringSafeArea(.all)
             ScrollViewReader { proxy in
-                List {
-                    ForEach(menuState.items.indices, id: \.self) { index in
-                        ZStack {
-                            MenuCell(text: menuState.items[index].name,
-                                     selected: menuState.selected == index,
-                                     arrow: menuState.items[index].arrow)
-                            NavigationLink(isActive: $menuState.navigate ) {
-                                switch menuState.selected {
-                                case 0:
-                                    MusicList()
-                                case 2:
-                                    SettingsList()
-                                case 4:
-                                    SettingsList()
-                                default:
-                                    Text("FUCK YOU")
+                    List {
+                        ForEach(menuState.items.indices, id: \.self) { index in
+                            ZStack {
+                                MenuCell(text: menuState.items[index].name,
+                                         selected: menuState.selected == index,
+                                         arrow: menuState.items[index].arrow)
+                                NavigationLink(isActive: $menuState.navigate ) {
+                                    switch menuState.selected {
+                                    case 0:
+                                        MusicList()
+                                    case 2:
+                                        SettingsList()
+                                    case 4:
+                                        SettingsList()
+                                    default:
+                                        Text("FUCK YOU")
+                                    }
+                                } label: {
+                                    EmptyView()
                                 }
-                            } label: {
-                                EmptyView()
+                                .frame(width: 0, height: 0)
+                                .hidden()
                             }
-                            .frame(width: 0, height: 0)
-                            .hidden()
+                            .listRowInsets(EdgeInsets())
+                            .listRowSeparator(.hidden)
+                            
                         }
-                        .listRowInsets(EdgeInsets())
-                        .listRowSeparator(.hidden)
-                        
                     }
+                    .onAppear(perform: {
+                        menuState.proxy = proxy
+                    })
+                    .listStyle(.plain)
+                    .environment(\.defaultMinListRowHeight, 40)
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
                 }
-                .onAppear(perform: {
-                    menuState.proxy = proxy
-                })
-                .listStyle(.plain)
-                .environment(\.defaultMinListRowHeight, 40)
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
-            }
         }.onAppear {
             appState.prepareToPlay()
             menuState.appState = appState

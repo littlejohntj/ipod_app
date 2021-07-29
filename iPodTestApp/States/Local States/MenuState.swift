@@ -12,6 +12,11 @@ import AudioToolbox
 import AVFoundation
 
 class MenuState: LocalState, ObservableObject {
+    
+    var onScreenItemCount: Int = 6
+    var currentTop: Int = 0
+    var currentBottom: Int = 5
+    
     var title: String = "iPod"
     var proxy: ScrollViewProxy?
     var appState: AppState?
@@ -21,28 +26,10 @@ class MenuState: LocalState, ObservableObject {
                              RowItem(name: "Shuffle Songs", arrow: true),
                              RowItem(name: "Backlight", arrow: false) ]
     
+    let maxNum: Int = 4
+    
     @Published var selected: Int = 0
     @Published var navigate: Bool = false
-    
-    func up() {
-        if selected < items.count - 1 {
-            selected += 1
-        }
-        
-        if let proxy = proxy {
-            proxy.scrollTo(selected, anchor: .bottom)
-        }
-    }
-    
-    func down() {
-        if selected > 0 {
-            selected -= 1
-        }
-        
-        if let proxy = proxy {
-            proxy.scrollTo(selected, anchor: .top)
-        }
-    }
     
     func selfNavigate() {
         if selected == 4 {
