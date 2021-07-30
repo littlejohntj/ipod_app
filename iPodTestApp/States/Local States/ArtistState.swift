@@ -34,7 +34,7 @@ class ArtistState: LocalState, ObservableObject {
     }
     
     class func stateForArtist( artist: String ) -> ArtistState {
-        let items = MusicManager.allArtistAlbums(artist: artist).map { RowItem(name: $0.title!, arrow: true, song: nil) }
+        let items = MusicManager.allArtistAlbums(artist: artist).map { RowItem(name: $0, arrow: true, song: nil) }
         return ArtistState(title: artist, items: items)
     }
 }

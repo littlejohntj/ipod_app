@@ -24,6 +24,7 @@ struct NowPlayingView: View {
             NowPlaying(nowPlayingState: nowPlayingState)
         }
         .onAppear {
+            nowPlayingState.appState = appState
             appState.setStateDismiss(dismiss: dismiss)
             appState.setLocalState(localState: nowPlayingState)
         }

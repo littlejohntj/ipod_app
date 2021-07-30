@@ -15,7 +15,16 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            iPodHID()
+            Color.black.edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                iPodCase {
+                    iPodHID()
+                }
+                .transformEffect( CGAffineTransform(scaleX: 0.8, y: 0.8) )
+                .transformEffect( CGAffineTransform(translationX: 120, y: 80) )
+                Spacer()
+            }
         }
         .environmentObject(state)
         .onAppear {

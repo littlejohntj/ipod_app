@@ -18,9 +18,13 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     @Published var currentSong: MPMediaItem?
     @Published var backlight: Bool = true
     @Published var localState: LocalState?
+    @Published var title: String = "iPod"
     var bombSoundEffect: AVAudioPlayer?
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let playbackTimer = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
     var stateDismiss: DismissAction?
+    
+    var isPlaying: Bool { SystemMusicPlayer.shared.playbackStatus == .playing }
         
     func up() {
         
@@ -91,6 +95,8 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     
     func playPause() {
         
+//        MPMusicPlayerController.systemMusicPlayer.nowPlayingItem
+        
         if SystemMusicPlayer.shared.playbackStatus == .playing {
             SystemMusicPlayer.shared.pause()
         } else if SystemMusicPlayer.shared.playbackStatus == .paused {
@@ -120,6 +126,60 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
 //        async {
 //            bombSoundEffect?.play()
 //        }
+    }
+    
+    func seekSong() {
+        MPMusicPlayerController.systemMusicPlayer.prepareToPlay { error in
+            MPMusicPlayerController.systemMusicPlayer.play()
+            MPMusicPlayerController.systemMusicPlayer.currentPlaybackTime = TimeInterval(120)
+        }
+    }
+    
+    func shouldShowScrollBar() -> Bool {
+        if let items = localState?.items {
+            return items.count > 6
+        }
+        
+        return false
+    }
+    
+    func aRatio() -> CGFloat {
+        
+//        return CGFloat(1) / CGFloat(3)
+        
+        if let localState = localState {
+            let itemsBeforeTop = localState.currentTop
+            let totalNumberOfItems = localState.items.count
+            return CGFloat(itemsBeforeTop) / CGFloat(totalNumberOfItems)
+        }
+        
+        return 0
+    }
+    
+    func bRatio() -> CGFloat {
+        
+//        return CGFloat(1) / CGFloat(3)
+        
+        if let localState = localState {
+            let currentItems = 6
+            let totalNumberOfItems = localState.items.count
+            return CGFloat(currentItems) / CGFloat(totalNumberOfItems)
+        }
+        
+        return 0
+    }
+    
+    func cRatio() -> CGFloat {
+        
+//        return CGFloat(1) / CGFloat(3)
+        
+        if let localState = localState {
+            let totalNumberOfItems = localState.items.count
+            let itemsAfterBottom = totalNumberOfItems - localState.currentBottom - 1
+            return CGFloat(itemsAfterBottom) / CGFloat(totalNumberOfItems)
+        }
+        
+        return 0
     }
     
 }

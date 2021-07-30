@@ -12,7 +12,7 @@ import Combine
 class NowPlayingState: LocalState, ObservableObject {
     
     var proxy: ScrollViewProxy?
-    
+    var appState: AppState?
     var onScreenItemCount: Int = 6
     var currentTop: Int = 0
     var currentBottom: Int = 5
@@ -26,6 +26,7 @@ class NowPlayingState: LocalState, ObservableObject {
     
     func up() {
         print("up")
+        appState?.seekSong()
     }
     
     func down() {

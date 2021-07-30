@@ -59,22 +59,22 @@ class QueryState: LocalState, ObservableObject {
         switch query {
         case "Songs":
             let items = QueryState.allSongs()
-            return QueryState(title: query, items: items)
+            return QueryState(title: "All Songs", items: items)
         case "Albums":
             let items = QueryState.allAlbums()
-            return QueryState(title: query, items: items)
+            return QueryState(title: "All Albums", items: items)
         case "Playlist":
             let items = QueryState.allPlaylists()
-            return QueryState(title: query, items: items)
+            return QueryState(title: "All Playlists", items: items)
         case "Artists":
             let items = QueryState.allArtists()
-            return QueryState(title: query, items: items)
+            return QueryState(title: "All Artists", items: items)
         case "Genres":
             let items = QueryState.allGenres()
-            return QueryState(title: query, items: items)
+            return QueryState(title: "All Genres", items: items)
         case "Composers":
             let items = QueryState.allComposers()
-            return QueryState(title: query, items: items)
+            return QueryState(title: "All Composers", items: items)
         default:
             let items = QueryState.items(for: query)
             return QueryState(title: query, items: items)

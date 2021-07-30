@@ -47,10 +47,11 @@ struct AlbumList: View {
                     localState.proxy = proxy
                 })
                 .listStyle(.plain)
-                .environment(\.defaultMinListRowHeight, 40)
+                .environment(\.defaultMinListRowHeight, 35)
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
             }.onAppear {
+                appState.title = localState.title
                 localState.appState = appState
                 appState.setStateDismiss(dismiss: dismiss)
                 appState.setLocalState(localState: localState)

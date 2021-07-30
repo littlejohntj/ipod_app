@@ -33,7 +33,7 @@ struct ArtistList: View {
                                 if let song = selection.song {
                                     NowPlayingView(song: song)
                                 } else {
-                                                                        
+                                    QueryList(localState: QueryState.songStateFromAlbum(query: selection.name))
                                 }
                             } label: {
                                 EmptyView()
@@ -51,10 +51,11 @@ struct ArtistList: View {
                     localState.proxy = proxy
                 })
                 .listStyle(.plain)
-                .environment(\.defaultMinListRowHeight, 40)
+                .environment(\.defaultMinListRowHeight, 35)
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
             }.onAppear {
+                appState.title = localState.title
                 localState.appState = appState
                 appState.setStateDismiss(dismiss: dismiss)
                 appState.setLocalState(localState: localState)

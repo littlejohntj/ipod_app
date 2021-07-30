@@ -44,7 +44,7 @@ struct SongList: View {
                     localState.proxy = proxy
                 })
                 .listStyle(.plain)
-                .environment(\.defaultMinListRowHeight, 40)
+                .environment(\.defaultMinListRowHeight, 35)
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
             }.onAppear {

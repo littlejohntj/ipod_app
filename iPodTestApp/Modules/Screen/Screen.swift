@@ -43,22 +43,68 @@ struct Screen<Content>: View where Content: View {
                         .frame(width: blueWidth, height: blueHeight, alignment: .center)
                     VStack( spacing: 0 ) {
                         TopMenuBar()
-                            .frame(height: 32).padding([.top], 3)
+                            .frame(height: 33).padding([.top], 4)
                         Rectangle()
                             .fill( Theme.colors.darkColor )
-                            .frame(height: 2)
+                            .frame(height: 2.5)
                         Spacer()
                             .frame(height: 2)
                         NavigationView {
-                            container()
-                            .navigationBarTitle("")
-                            .navigationBarHidden(true)
+                            ZStack {
+                                Theme.colors.lightColor.ignoresSafeArea()
+                                HStack(spacing: 2) {
+                                    container()
+                                        .navigationBarTitle("")
+                                        .navigationBarHidden(true)
+                                    if appState.shouldShowScrollBar() {
+                                        ScrollBar()
+                                            .frame(width: 15)
+                                    }
+                                }
+                            }
+                            
                         }
                         .navigationViewStyle(StackNavigationViewStyle())
                     }
                 }.frame(width: blueWidth, height: blueHeight)
             }
     }
+}
+
+struct ScrollBar: View {
+    
+    @EnvironmentObject var appState: AppState
+    
+    var body: some View {
+        GeometryReader { rect in
+            ZStack {
+                Theme.colors.lightColor.ignoresSafeArea()
+                Border(size: 2)
+                    .foregroundColor(Theme.colors.darkColor)
+                VStack(spacing: 0) {
+                    Rectangle()
+                        .foregroundColor(Theme.colors.lightColor)
+                        .frame(width: 8,
+//                               height: (rect.size.height - 6) / 3.0 ,
+                               height: appState.aRatio() * ( rect.size.height - 8 ) ,
+                               alignment: .center)
+                    Rectangle()
+                        .foregroundColor(Theme.colors.darkColor)
+                        .frame(width: 8,
+//                               height: (rect.size.height - 6) / 3.0,
+                               height: appState.bRatio() * ( rect.size.height - 8 ),
+                               alignment: .center)
+                    Rectangle()
+                        .foregroundColor(Theme.colors.lightColor)
+                        .frame(width: 8,
+//                               height: (rect.size.height - 6) / 3.0 ,
+                               height: appState.cRatio() * ( rect.size.height - 8 ),
+                               alignment: .center)
+                }
+            }
+        }
+    }
+    
 }
 
 struct ScreenView: View {
@@ -69,6 +115,7 @@ struct ScreenView: View {
                 Text("Yoo :)")
             }
         }.frame(width: 500, height: 500, alignment: .center)
+            .environmentObject(AppState())
     }
 }
 

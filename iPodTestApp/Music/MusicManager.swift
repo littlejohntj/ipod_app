@@ -66,7 +66,25 @@ struct MusicManager {
             return [MPMediaItem]()
         }
         
-        return songs
+        return songs.filter { song in
+            guard song.title != nil else {
+                return false
+            }
+            
+            guard song.albumTitle != nil else {
+                return false
+            }
+            
+            guard song.artist != nil else {
+                return false
+            }
+            
+            guard song.genre != nil else {
+                return false
+            }
+            
+            return true
+        }
     }
     
     static func allAlbums() -> [MPMediaItem] {
@@ -110,12 +128,18 @@ struct MusicManager {
         return artists
     }
     
-    static func allArtistAlbums( artist: String ) -> [MPMediaItem] {
-        guard let albums = MPMediaQuery.albums().items else {
-            return [MPMediaItem]()
+    static func allArtistAlbums( artist: String ) -> [String] {
+        
+        guard let songs = MPMediaQuery.songs().items else {
+            return [String]()
         }
         
-        return albums.filter { $0.artist == artist }
+        let artistSongs = songs.filter { $0.artist == artist }
+        
+        
+        return Set(artistSongs.compactMap { $0.albumTitle }).sorted()
+        
+//        return albums.filter { $0.artist == artist }
     }
     
     static func allPlaylists() -> [MPMediaItem] {

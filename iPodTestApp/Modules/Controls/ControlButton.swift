@@ -33,8 +33,8 @@ struct ControlButton<Content>: View where Content: View {
                         .softOuterShadow(offset: 2, radius: 3)
                     if appState.backlight {
                         content()
-                            .frame(width: size, height: size)
                             .multicolorGlow()
+                            .frame(width: size, height: size)
                     } else {
                         content()
                             .frame(width: size, height: size)

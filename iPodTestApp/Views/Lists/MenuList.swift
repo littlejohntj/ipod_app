@@ -45,17 +45,23 @@ struct MenuList: View {
                             .listRowSeparator(.hidden)
                             
                         }
+//                        MenuCell(text: "Suck My Cock",
+//                                 selected: false,
+//                                 arrow: true)
+//                            .listRowInsets(EdgeInsets())
+//                            .listRowSeparator(.hidden)
+                        
                     }
                     .onAppear(perform: {
                         menuState.proxy = proxy
                     })
                     .listStyle(.plain)
-                    .environment(\.defaultMinListRowHeight, 40)
+                    .environment(\.defaultMinListRowHeight, 35)
                     .navigationBarTitle("")
                     .navigationBarHidden(true)
                 }
         }.onAppear {
-            appState.prepareToPlay()
+            appState.title = menuState.title
             menuState.appState = appState
             appState.setStateDismiss(dismiss: dismiss)
             appState.setLocalState(localState: menuState)

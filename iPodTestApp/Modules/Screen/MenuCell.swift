@@ -43,7 +43,7 @@ struct MenuCell: View {
                 }
             }
         }
-        .frame( height: 40 )
+        .frame( height: 37 )
     }
 }
 

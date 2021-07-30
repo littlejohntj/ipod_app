@@ -16,10 +16,20 @@ struct iPodCase<Content>: View where Content : View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(Color.white)
-                .frame(width: 498, height: 839)
-                .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
+            ZStack {
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .fill(Color.white)
+    //                .background(Color.white)
+                    .frame(width: 498, height: 839)
+                    .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
+//                Image("bayc", bundle: .main)
+//                    .resizable()
+//                    .frame(height: 839)
+//                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+//                    .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
+            }
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .frame(width: 498, height: 839)
             content()
                 .frame(width: 300, height: 500, alignment: .center)
         }
