@@ -15,7 +15,7 @@ import AVFoundation
 
 class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     
-    @Published var currentSong: MPMediaItem?
+    @Published var currentSong: MPMediaItem? = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem
     @Published var backlight: Bool = true
     @Published var localState: LocalState?
     @Published var title: String = "iPod"
@@ -73,13 +73,33 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
         let timeInSeconds = currentTimePlayed()
         return convertTimeToPlaybackString(time: timeInSeconds)
     }
-    
+
     func convertTimeToPlaybackString( time: Int ) -> String {
         let timeInSeconds = Int(time)
         let minutes = timeInSeconds / 60
         let seconds = timeInSeconds % 60
         let secondsString = seconds < 10 ? "0\(seconds)" : "\(seconds)"
         return "\(minutes):\(secondsString)"
+    }
+    
+    func deltaCurrentPlaybackString( percent: CGFloat ) -> String {
+        
+        if let playbackDuration = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem?.playbackDuration {
+            let timePassed = Int(playbackDuration * percent)
+            return convertTimeToPlaybackString(time: timePassed)
+        }
+        
+        return "0:05"
+    }
+    
+    func deltaEndPlaybackString( percent: CGFloat ) -> String {
+        if let playbackDuration = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem?.playbackDuration {
+            let timePassed = Int(playbackDuration * percent)
+            let timeRemaining = Int(playbackDuration) - timePassed
+            return "-\(convertTimeToPlaybackString(time: timeRemaining))"
+        }
+        
+        return "0:05"
     }
     
     func endPlaybackString() -> String {
@@ -91,6 +111,21 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
         }
         
         return "0:00"
+    }
+    
+    func songPlayedRatio() -> CGFloat {
+        if let playbackDuration = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem?.playbackDuration {
+            let timePassed = currentTimePlayed()
+//            let timeRemaining = Int(playbackDuration) - timePassed
+            return CGFloat(timePassed) / CGFloat(playbackDuration)
+        }
+        
+        return 0.5
+    }
+    
+    func songRemainingRatio() -> CGFloat {
+        let songPlayedRatio = self.songPlayedRatio()
+        return 1 - songPlayedRatio
     }
     
     func playPause() {
@@ -128,10 +163,15 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
 //        }
     }
     
-    func seekSong() {
-        MPMusicPlayerController.systemMusicPlayer.prepareToPlay { error in
-            MPMusicPlayerController.systemMusicPlayer.play()
-            MPMusicPlayerController.systemMusicPlayer.currentPlaybackTime = TimeInterval(120)
+    func seekSong( percent: CGFloat ) {
+        
+        if let playbackDuration = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem?.playbackDuration {
+            
+            let playbackTime = Int(playbackDuration * percent)
+            MPMusicPlayerController.systemMusicPlayer.prepareToPlay { error in
+                MPMusicPlayerController.systemMusicPlayer.play()
+                MPMusicPlayerController.systemMusicPlayer.currentPlaybackTime = TimeInterval(playbackTime)
+            }
         }
     }
     
@@ -180,6 +220,10 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
         }
         
         return 0
+    }
+    
+    func hasNowPlayingSong() -> Bool {
+        return MPMusicPlayerController.systemMusicPlayer.nowPlayingItem != nil
     }
     
 }

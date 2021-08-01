@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 import AudioToolbox
 import AVFoundation
+import MediaPlayer
 
 class MenuState: LocalState, ObservableObject {
     
@@ -23,8 +24,11 @@ class MenuState: LocalState, ObservableObject {
     var items: [RowItem] = [ RowItem(name: "Music", arrow: true),
                              RowItem(name: "Extras", arrow: true),
                              RowItem(name: "Settings", arrow: true),
-                             RowItem(name: "Shuffle Songs", arrow: true),
-                             RowItem(name: "Backlight", arrow: false) ]
+                             RowItem(name: "Shuffle Songs", arrow: false),
+                             RowItem(name: "Backlight", arrow: false),
+                             RowItem(name: "Now Playing", arrow: true) ]
+    
+    
     
     let maxNum: Int = 4
     
@@ -38,6 +42,5 @@ class MenuState: LocalState, ObservableObject {
             navigate = true
         }
     }
-    
     
 }

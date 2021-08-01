@@ -30,8 +30,10 @@ struct MenuList: View {
                                         MusicList()
                                     case 2:
                                         SettingsList()
-                                    case 4:
-                                        SettingsList()
+                                    case 5:
+                                        if let song = appState.currentSong {
+                                            NowPlayingView(song: song)
+                                        }
                                     default:
                                         Text("FUCK YOU")
                                     }
@@ -45,12 +47,6 @@ struct MenuList: View {
                             .listRowSeparator(.hidden)
                             
                         }
-//                        MenuCell(text: "Suck My Cock",
-//                                 selected: false,
-//                                 arrow: true)
-//                            .listRowInsets(EdgeInsets())
-//                            .listRowSeparator(.hidden)
-                        
                     }
                     .onAppear(perform: {
                         menuState.proxy = proxy

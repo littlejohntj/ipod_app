@@ -24,6 +24,7 @@
 		07B4D60926A5C0BD002D7ADA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4D60826A5C0BD002D7ADA /* Theme.swift */; };
 		07C103A42693F6050076C5B4 /* iPodCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C103A32693F6050076C5B4 /* iPodCase.swift */; };
 		07C2594326B3869D0037E303 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2594226B3869C0037E303 /* Border.swift */; };
+		07C3EB2826B4A62F002120AA /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EB2726B4A62F002120AA /* Diamond.swift */; };
 		07CD01B426A7811700416F32 /* QueryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD01B326A7811700416F32 /* QueryState.swift */; };
 		07CD01B626A8547900416F32 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD01B526A8547900416F32 /* SettingsState.swift */; };
 		07CD01B826A857CC00416F32 /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD01B726A857CC00416F32 /* NowPlaying.swift */; };
@@ -94,6 +95,7 @@
 		07B4D60826A5C0BD002D7ADA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		07C103A32693F6050076C5B4 /* iPodCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodCase.swift; sourceTree = "<group>"; };
 		07C2594226B3869C0037E303 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
+		07C3EB2726B4A62F002120AA /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
 		07CD01B326A7811700416F32 /* QueryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryState.swift; sourceTree = "<group>"; };
 		07CD01B526A8547900416F32 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		07CD01B726A857CC00416F32 /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				07B4D60626A5B992002D7ADA /* Arrow.swift */,
 				07D3080026AE0D9A00321BDA /* PlaybackBar.swift */,
 				07C2594226B3869C0037E303 /* Border.swift */,
+				07C3EB2726B4A62F002120AA /* Diamond.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				074516BE26AB8FF800D7C54E /* MusicManager.swift in Sources */,
 				07E3A03D269373FB0081C737 /* Screen.swift in Sources */,
 				07E3A0362691E5050081C737 /* CGPoint+Conversion.swift in Sources */,
+				07C3EB2826B4A62F002120AA /* Diamond.swift in Sources */,
 				07B4D60926A5C0BD002D7ADA /* Theme.swift in Sources */,
 				07EB156026B0D109009595E5 /* AlbumList.swift in Sources */,
 				07C103A42693F6050076C5B4 /* iPodCase.swift in Sources */,

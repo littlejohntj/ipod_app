@@ -57,7 +57,6 @@ struct PlaybackState: View {
             Image(systemName: isPlaying ? "play.fill" : "pause.fill")
                 .foregroundColor(Theme.colors.darkColor)
                 .frame(width: 36, height: 18, alignment: .center)
-            
             Spacer()
         }
         .onReceive(appState.playbackTimer) { _ in
