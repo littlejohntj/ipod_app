@@ -36,7 +36,11 @@ class MenuState: LocalState, ObservableObject {
     @Published var navigate: Bool = false
     
     func selfNavigate() {
-        if selected == 4 {
+        
+        if selected == 3 {
+            appState?.shuffle()
+        }
+        else if selected == 4 {
             appState?.backlight.toggle()
         } else {
             navigate = true

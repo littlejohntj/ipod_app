@@ -15,35 +15,27 @@ import AVFoundation
 
 class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     
-    @Published var currentSong: MPMediaItem? = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem
     @Published var backlight: Bool = true
     @Published var localState: LocalState?
     @Published var title: String = "iPod"
     var bombSoundEffect: AVAudioPlayer?
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     let playbackTimer = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
     var stateDismiss: DismissAction?
+    var queue: [String]?
+    
+    func currentSong() -> MPMediaItem? {
+        MPMusicPlayerController.systemMusicPlayer.nowPlayingItem
+    }
     
     var isPlaying: Bool { SystemMusicPlayer.shared.playbackStatus == .playing }
         
     func up() {
-        
-        playSound()
-        
         localState?.up()
-//        if let localState = self.localState {
-//            localState.up()
-//        }
     }
     
     func down() {
-        
-        playSound()
         localState?.down()
-        
-//        if let localState = self.localState {
-//            localState.down()
-//        }
     }
     
     func setStateDismiss( dismiss: DismissAction ) {
@@ -58,9 +50,11 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
         self.localState?.selfNavigate()
     }
     
-    func playCurrentTrackFromBegining() {
-        if let song = currentSong {
-            MPMusicPlayerController.systemMusicPlayer.setQueue(with: [song.playbackStoreID])
+    func playQueue( queue: [String] ) {
+        MPMusicPlayerController.systemMusicPlayer.setQueue(with: queue)
+        self.queue = queue
+        
+        async {
             MPMusicPlayerController.systemMusicPlayer.play()
         }
     }
@@ -157,12 +151,6 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
         }
     }
     
-    func playSound() {
-//        async {
-//            bombSoundEffect?.play()
-//        }
-    }
-    
     func seekSong( percent: CGFloat ) {
         
         if let playbackDuration = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem?.playbackDuration {
@@ -224,6 +212,13 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     
     func hasNowPlayingSong() -> Bool {
         return MPMusicPlayerController.systemMusicPlayer.nowPlayingItem != nil
+    }
+    
+    func shuffle() {
+        if let queue = queue {
+            let shuffledQueue = queue.shuffled()
+            playQueue(queue: shuffledQueue)
+        }
     }
     
 }

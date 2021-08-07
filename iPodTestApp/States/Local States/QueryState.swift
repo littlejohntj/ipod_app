@@ -15,10 +15,13 @@ class QueryState: LocalState, ObservableObject {
     var currentTop: Int = 0
     var currentBottom: Int = 5
     
-    init ( title: String, items: [RowItem] ) {
+    init ( title: String, items: [RowItem], queue: [String]? = nil ) {
         self.title = title
         self.items = items
+        self.queue = queue
     }
+    
+    var queue: [String]?
                        
     var appState: AppState?
     @Published var selected: Int = 0
@@ -83,7 +86,12 @@ class QueryState: LocalState, ObservableObject {
     }
     
     class func songStateFromAlbum( query: String ) -> QueryState {
-        let items = QueryState.songItemsForAlbum(query)
+        var items = QueryState.songItemsForAlbum(query)
+        items.sort { lhs, rhs in
+            
+            return lhs.song!.albumTrackNumber < rhs.song!.albumTrackNumber
+            
+        }
         return QueryState(title: query, items: items)
     }
     
@@ -140,14 +148,12 @@ class QueryState: LocalState, ObservableObject {
         
         if let song = selection.song {
             
-            if let currentSongId = appState?.currentSong?.playbackStoreID, currentSongId == song.playbackStoreID {
+            if let currentSongId = appState?.currentSong()?.playbackStoreID, currentSongId == song.playbackStoreID {
                 navigate = true
             } else {
-                appState?.currentSong = song
+//                appState?.currentSong = song
                 navigate = true
-                async {
-                    appState?.playCurrentTrackFromBegining()
-                }
+                appState?.playQueue(queue: (items[selected...] + items[..<selected]).compactMap { $0.song?.playbackStoreID })
             }
         } else {
             navigate = true

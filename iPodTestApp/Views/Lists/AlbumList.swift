@@ -27,10 +27,10 @@ struct AlbumList: View {
                                      arrow: localState.items[index].arrow)
                             NavigationLink(isActive: $localState.navigate ) {
                                 
-                                let selectedIndex = localState.selected
-                                let selection = localState.items[selectedIndex]
-                            
+//                                let selectedIndex = localState.selected
+//                                let selection = localState.items[selectedIndex]
                                 EmptyView()
+                                
                             } label: {
                                 EmptyView()
                             }

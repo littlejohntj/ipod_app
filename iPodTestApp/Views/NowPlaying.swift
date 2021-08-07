@@ -27,6 +27,8 @@ struct NowPlayingView: View {
             nowPlayingState.appState = appState
             appState.setStateDismiss(dismiss: dismiss)
             appState.setLocalState(localState: nowPlayingState)
+            
+            print( "mfcats \(song.playbackStoreID)" )
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
@@ -36,10 +38,12 @@ struct NowPlayingView: View {
 struct NowPlaying: View {
     @EnvironmentObject var appState: AppState
     @StateObject var nowPlayingState: NowPlayingState
+    
+    @State var trackText: String = ""
     var body: some View {
         VStack {
             HStack {
-                Text("\(appState.currentSong!.albumTrackNumber) of \(appState.currentSong!.albumTrackCount)")
+                Text(trackText)
                     .font(.custom("Chicago", size: 18))
                 Spacer()
             }
@@ -50,6 +54,9 @@ struct NowPlaying: View {
             TimeTracker(localState: nowPlayingState)
                 .padding([.leading, .trailing, .bottom], 10)
         }
+        .onReceive(appState.timer) { time in
+            trackText = "\(appState.currentSong()!.albumTrackNumber) of \(appState.currentSong()!.albumTrackCount)"
+        }
         .font(.custom("Chicago", size: 22))
         .foregroundColor(Theme.colors.darkColor)
     }
@@ -58,14 +65,31 @@ struct NowPlaying: View {
 struct TrackInfoView: View {
     @EnvironmentObject var appState: AppState
     
+    @State var title: String = ""
+    @State var artist: String = ""
+    @State var album: String = ""
+    
     var body: some View {
         VStack {
-            Text(appState.currentSong!.title!)
-
-            Text(appState.currentSong!.artist!)
-            Text(appState.currentSong!.albumTitle!)
+            Text(title)
+            Text(artist)
+            Text(album)
         }
         .padding(10)
+        .onReceive(appState.timer) { time in
+            
+            if let title = appState.currentSong()?.title {
+                self.title = title
+            }
+            
+            if let artist = appState.currentSong()?.artist {
+                self.artist = artist
+            }
+            
+            if let album = appState.currentSong()?.albumTitle {
+                self.album = album
+            }
+        }
     }
 }
 
@@ -158,7 +182,6 @@ struct DiamondControll: View {
                 .frame(width: nowPlayingState.seekState == .diamondScroll ? deltaRightSpacing() : rightSpacing )
         }
         .onReceive(appState.timer) { time in
-            
             leftSpacing = usableWidth() * leftRatio()
             rightSpacing = usableWidth() * rightRatio()
         }

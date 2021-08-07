@@ -25,6 +25,8 @@
 		07C103A42693F6050076C5B4 /* iPodCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C103A32693F6050076C5B4 /* iPodCase.swift */; };
 		07C2594326B3869D0037E303 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2594226B3869C0037E303 /* Border.swift */; };
 		07C3EB2826B4A62F002120AA /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C3EB2726B4A62F002120AA /* Diamond.swift */; };
+		07C50F0726BB596B000655F1 /* Bell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C50F0626BB596B000655F1 /* Bell.swift */; };
+		07C50F1426BBA59A000655F1 /* Stem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C50F1326BBA59A000655F1 /* Stem.swift */; };
 		07CD01B426A7811700416F32 /* QueryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD01B326A7811700416F32 /* QueryState.swift */; };
 		07CD01B626A8547900416F32 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD01B526A8547900416F32 /* SettingsState.swift */; };
 		07CD01B826A857CC00416F32 /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD01B726A857CC00416F32 /* NowPlaying.swift */; };
@@ -96,6 +98,8 @@
 		07C103A32693F6050076C5B4 /* iPodCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodCase.swift; sourceTree = "<group>"; };
 		07C2594226B3869C0037E303 /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		07C3EB2726B4A62F002120AA /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
+		07C50F0626BB596B000655F1 /* Bell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bell.swift; sourceTree = "<group>"; };
+		07C50F1326BBA59A000655F1 /* Stem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stem.swift; sourceTree = "<group>"; };
 		07CD01B326A7811700416F32 /* QueryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryState.swift; sourceTree = "<group>"; };
 		07CD01B526A8547900416F32 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		07CD01B726A857CC00416F32 /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				07D3080026AE0D9A00321BDA /* PlaybackBar.swift */,
 				07C2594226B3869C0037E303 /* Border.swift */,
 				07C3EB2726B4A62F002120AA /* Diamond.swift */,
+				07C50F0626BB596B000655F1 /* Bell.swift */,
+				07C50F1326BBA59A000655F1 /* Stem.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 			files = (
 				07CD01B626A8547900416F32 /* SettingsState.swift in Sources */,
 				07C2594326B3869D0037E303 /* Border.swift in Sources */,
+				07C50F1426BBA59A000655F1 /* Stem.swift in Sources */,
 				07CD01B426A7811700416F32 /* QueryState.swift in Sources */,
 				07E3A044269395970081C737 /* ControlButton.swift in Sources */,
 				074516BE26AB8FF800D7C54E /* MusicManager.swift in Sources */,
@@ -561,6 +568,7 @@
 				07B4D60726A5B992002D7ADA /* Arrow.swift in Sources */,
 				07EB156226B0D112009595E5 /* AlbumState.swift in Sources */,
 				07EB155C26B0C5F4009595E5 /* ArtistList.swift in Sources */,
+				07C50F0726BB596B000655F1 /* Bell.swift in Sources */,
 				07E3A03A2691E5590081C737 /* Rotation.swift in Sources */,
 				07CD01BA26A85D3800416F32 /* NowPlayingState.swift in Sources */,
 				075C6C4B26AC5DBE002C4C25 /* SongList.swift in Sources */,

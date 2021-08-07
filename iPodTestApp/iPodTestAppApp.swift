@@ -19,6 +19,10 @@ struct iPodTestAppApp: App {
     
     var body: some Scene {
         WindowGroup {
+//            ZStack {
+//                Color.black.ignoresSafeArea()
+//                BellView()
+//            }
             ContentView(state: state)
 //            MusicView()
         }

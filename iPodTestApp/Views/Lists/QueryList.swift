@@ -33,7 +33,7 @@ struct QueryList: View {
                                     let selectedIndex = localState.selected
                                     let selection = localState.items[selectedIndex]
                                     
-                                    if let song = selection.song {
+                                    if let song = selection.song{
                                         NowPlayingView(song: song)
                                     } else {
                                         if localState.title == "All Artists" {

@@ -31,7 +31,7 @@ struct MenuList: View {
                                     case 2:
                                         SettingsList()
                                     case 5:
-                                        if let song = appState.currentSong {
+                                        if let song = appState.currentSong() {
                                             NowPlayingView(song: song)
                                         }
                                     default:
