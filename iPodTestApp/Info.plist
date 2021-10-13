@@ -2,12 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleInfoDictionaryVersion</key>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>spotify</string>
+    </array>
+	<key>CFBundleURLTypes</key>
 	<array>
-		<string>Chicago Regular.ttf</string>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.spotify.iOS-SDK-Quick-Start</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>spotify-ios-quick-start</string>
+			</array>
+		</dict>
 	</array>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>This is for good music.</string>
 	<key>UIAppFonts</key>

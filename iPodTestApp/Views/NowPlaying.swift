@@ -55,7 +55,10 @@ struct NowPlaying: View {
                 .padding([.leading, .trailing, .bottom], 10)
         }
         .onReceive(appState.timer) { time in
-            trackText = "\(appState.currentSong()!.albumTrackNumber) of \(appState.currentSong()!.albumTrackCount)"
+            
+            if let trackNumber = appState.currentSong()?.albumTrackNumber, let trackCount = appState.currentSong()?.albumTrackCount {
+                trackText = "\(trackNumber) of \(trackCount)"
+            }
         }
         .font(.custom("Chicago", size: 22))
         .foregroundColor(Theme.colors.darkColor)

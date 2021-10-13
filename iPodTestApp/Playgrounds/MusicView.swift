@@ -24,7 +24,9 @@ struct MusicView: View {
                 }
             }.padding()
             Button("Play") {
-                SystemMusicPlayer.shared.play()
+                async {
+                    try? await SystemMusicPlayer.shared.play()
+                }
             }.padding()
             Button("Pause") {
                 SystemMusicPlayer.shared.pause()

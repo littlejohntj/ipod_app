@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
 struct ControlBarViewModel {
     var menuAction: () -> ()
@@ -23,6 +24,7 @@ struct ControlBar: View {
                 Image(systemName: "backward.end.alt.fill")
                     .foregroundColor(Theme.colors.buttonTextColor)
             } action: {
+                UIDevice.lightHaptic()
                 state.backwardsSong()
             }
             Spacer()
@@ -31,21 +33,25 @@ struct ControlBar: View {
                     .fontWeight(.bold)
                     .foregroundColor(Theme.colors.buttonTextColor)
             } action: {
+                UIDevice.lightHaptic()
                 state.stateDismiss?()
             }
-
             Spacer()
             ControlButton(size: buttonSize) {
                 Image(systemName: "playpause.fill")
                     .foregroundColor(Theme.colors.buttonTextColor)
             } action: {
-                state.playPause()
+                UIDevice.lightHaptic()
+                async {
+                    await state.playPause()
+                }
             }
             Spacer()
             ControlButton(size: buttonSize) {
                 Image(systemName: "forward.end.alt.fill")
                     .foregroundColor(Theme.colors.buttonTextColor)
             } action: {
+                UIDevice.lightHaptic()
                 state.fowardSong()
             }
         }

@@ -146,8 +146,11 @@ class QueryState: LocalState, ObservableObject {
         
         let selection = items[selected]
         
+//        navigate = true
+//        appState?.playSong(item: selection.song!)
+        
         if let song = selection.song {
-            
+
             if let currentSongId = appState?.currentSong()?.playbackStoreID, currentSongId == song.playbackStoreID {
                 navigate = true
             } else {

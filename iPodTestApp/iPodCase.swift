@@ -10,23 +10,38 @@ import SwiftUI
 
 struct iPodCase<Content>: View where Content : View {
     
-    let cornerRadius: CGFloat = 50
+    @EnvironmentObject var appState: AppState
     
+    let cornerRadius: CGFloat = 50
     var content: () -> Content
     
     var body: some View {
         ZStack {
             ZStack {
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(Color.white)
-    //                .background(Color.white)
-                    .frame(width: 498, height: 839)
-                    .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
-//                Image("bayc", bundle: .main)
-//                    .resizable()
-//                    .frame(height: 839)
-//                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-//                    .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
+                if appState.colorIndex == 0 {
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill(Color.white)
+                        .frame(width: 498, height: 839)
+                        .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
+                } else if appState.colorIndex == 1 {
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill(Color.blue)
+                        .frame(width: 498, height: 839)
+                        .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
+                } else if appState.colorIndex == 2 {
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill(Color.purple)
+                        .frame(width: 498, height: 839)
+                        .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
+                } else if appState.colorIndex == 3 {
+                    Image("ib_ape", bundle: .main)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 498, height: 839)
+                        .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                        .clipped()
+                        .innerShadow(using: RoundedRectangle(cornerRadius: cornerRadius))
+                }
             }
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             .frame(width: 498, height: 839)

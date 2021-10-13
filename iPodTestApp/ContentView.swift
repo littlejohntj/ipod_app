@@ -11,25 +11,41 @@ import MediaPlayer
 
 struct ContentView: View {
     
-    @StateObject var state: AppState
+    @EnvironmentObject var state: AppState
 
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
-                iPodCase {
-                    iPodHID()
+                if UIDevice.modelName == "iPhone 11 Pro Max" {
+                    iPodCase {
+                        iPodHID()
+                    }
+                    .transformEffect( CGAffineTransform(scaleX: 0.7, y: 0.7) )
+                    .transformEffect( CGAffineTransform(translationX: 72, y: 120) )
+                } else if UIDevice.modelName == "iPad Pro (11-inch) (2nd generation)" {
+                    iPodCase {
+                        iPodHID()
+                    }
+                    .transformEffect( CGAffineTransform(scaleX: 0.8, y: 0.8) )
+                    .transformEffect( CGAffineTransform(translationX: 120, y: 80) )
+                } else {
+                    iPodCase {
+                        iPodHID()
+                    }
+                    .transformEffect( CGAffineTransform(scaleX: 0.8, y: 0.8) )
+                    .transformEffect( CGAffineTransform(translationX: 120, y: 80) )
                 }
-                .transformEffect( CGAffineTransform(scaleX: 0.8, y: 0.8) )
-                .transformEffect( CGAffineTransform(translationX: 120, y: 80) )
                 Spacer()
             }
         }
         .environmentObject(state)
         .onAppear {
             async {
-                await MusicAuthorization.request()
+                print(UIDevice.modelName)
+                let r = await MusicAuthorization.request()
+                print("fuck \(r)")
             }
         }
     }
@@ -52,7 +68,7 @@ struct iPodHID: View {
                 .frame(width: 420, height: 90, alignment: .center)
                 .padding()
             Wheel {
-                print("suppppp")
+                UIDevice.lightHaptic()
                 appState.selfNavigate()
             }
             .frame(width: 340, height: 340, alignment: .top)
@@ -66,7 +82,7 @@ struct iPodHID: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(state: AppState())
+            ContentView()
                 .previewDevice("iPhone 12 Pro")
         }
     }

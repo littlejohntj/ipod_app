@@ -10,14 +10,17 @@ import Combine
 import SwiftUI
 import MusicKit
 import MediaPlayer
-import UIKit
 import AVFoundation
+#if targetEnvironment(macCatalyst)
+import UIKit
+#endif
 
-class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
+class AppState: NSObject, ObservableObject {
     
     @Published var backlight: Bool = true
     @Published var localState: LocalState?
     @Published var title: String = "iPod"
+    @Published var colorIndex: Int = 0
     var bombSoundEffect: AVAudioPlayer?
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     let playbackTimer = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
@@ -25,7 +28,7 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     var queue: [String]?
     
     func currentSong() -> MPMediaItem? {
-        MPMusicPlayerController.systemMusicPlayer.nowPlayingItem
+        return MPMusicPlayerController.systemMusicPlayer.nowPlayingItem
     }
     
     var isPlaying: Bool { SystemMusicPlayer.shared.playbackStatus == .playing }
@@ -52,12 +55,24 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     
     func playQueue( queue: [String] ) {
         MPMusicPlayerController.systemMusicPlayer.setQueue(with: queue)
+        
         self.queue = queue
         
         async {
             MPMusicPlayerController.systemMusicPlayer.play()
         }
     }
+    
+    func playSong( item: MPMediaItem ) {
+        // Get the music player.
+        let musicPlayer = MPMusicPlayerApplicationController.applicationMusicPlayer
+        // Add a playback queue containing all songs on the device.
+        musicPlayer.nowPlayingItem = item
+        // Start playing from the beginning of the queue.
+        musicPlayer.play()
+    }
+    
+    
     
     func currentTimePlayed() -> Int {
         return Int(MPMusicPlayerController.systemMusicPlayer.currentPlaybackTime)
@@ -122,14 +137,14 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
         return 1 - songPlayedRatio
     }
     
-    func playPause() {
+    func playPause() async {
         
 //        MPMusicPlayerController.systemMusicPlayer.nowPlayingItem
         
         if SystemMusicPlayer.shared.playbackStatus == .playing {
             SystemMusicPlayer.shared.pause()
         } else if SystemMusicPlayer.shared.playbackStatus == .paused {
-            SystemMusicPlayer.shared.play()
+            try? await SystemMusicPlayer.shared.play()
         }
     }
     
@@ -172,9 +187,7 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     }
     
     func aRatio() -> CGFloat {
-        
-//        return CGFloat(1) / CGFloat(3)
-        
+                
         if let localState = localState {
             let itemsBeforeTop = localState.currentTop
             let totalNumberOfItems = localState.items.count
@@ -185,9 +198,7 @@ class AppState: NSObject, ObservableObject, UIInputViewAudioFeedback {
     }
     
     func bRatio() -> CGFloat {
-        
-//        return CGFloat(1) / CGFloat(3)
-        
+                
         if let localState = localState {
             let currentItems = 6
             let totalNumberOfItems = localState.items.count
